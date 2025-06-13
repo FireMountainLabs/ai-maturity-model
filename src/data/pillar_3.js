@@ -1,4 +1,4 @@
-export const pillar1Collection = {
+export const pillar3Collection = {
   "name": "Ethical, Equitable, and Responsible Use",
   "areas": [
     {
