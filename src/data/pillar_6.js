@@ -1,153 +1,116 @@
-{
-  "name": "Performance & Application",
+export const pillar1Collection = {
+  "name": "Ethical, Equitable, and Responsible Use",
   "areas": [
     {
-      "name": "Usage and Adoption",
+      "name": "Responsible, Governable, and Contestable",
       "skills": [
         {
-          "name": "Integrating Solutions into Workflows",
+          "name": "Governance and Compliance",
           "description": {
-            "text": "Identify and document AI business use cases and apply integrated solutions and processes into workflows to realize strategic outcomes."
+            "text": "Establish and enforce oversight for AI system development and outcomes to ensure compliance with regulations and enterprise-wide standards. "
           },
           "skills": [
             {
-              "name": "Develop Business Use Cases",
+              "name": "Accountability Processes",
               "description": {
-                "text": "Begin developing and documenting AI business use cases with skilled teams, and align integrated solutions to workflows."
+                "text": "Develop and implement processes to ensure accountability for AI system outputs and decisions. "
               }
             },
             {
-              "name": "Align Use Cases to Strategy",
+              "name": "Contestability Mechanisms",
               "description": {
-                "text": "Put in place an approved set of AI business use cases with integrated solutions aligned to workflows and formulating strategic outcomes."
+                "text": "Create timely processes that allow users and those impacted to challenge or appeal AI system outputs and use. "
               }
             },
             {
-              "name": "Quantify with KPIs",
+              "name": "Monitoring and Reporting",
               "description": {
-                "text": "Link enterprise-based AI business use cases to solutions which are quantified to specific key performance indicators (KPIs) that measure strategic outcomes."
-              }
-            },
-            {
-              "name": "Routine Assessment and Improvement",
-              "description": {
-                "text": "Routinely assess and evaluate enterprise-based AI business use cases and solutions by KPIs to inform outcomes and improve future strategic goals, planning, and implementation."
+                "text": "Routinely utilize and monitor enforcement practices for accountable and contestable AI solutions, including reporting on compliance. "
               }
             }
           ]
+        },
+        {
+          "name": "Delegation Policies",
+          "description": {
+            "text": "Formulate a policy or framework for identifying which decisions and operations should never be delegated to AI systems. "
+          }
         }
       ]
     },
     {
-      "name": "Solution Monitoring",
+      "name": "Transparency",
       "skills": [
         {
-          "name": "Monitoring Deployed Solutions",
+          "name": "Explainability and Justification",
           "description": {
-            "text": "Use a combination of tools and processes to monitor deployed AI solutions and detect any changes in performance, fairness, security, or user trust over time."
+            "text": "Ensure that AI system decisions, outputs, and outcomes are explainable and justifiable to all stakeholders. "
           },
           "skills": [
             {
-              "name": "Develop Monitoring Techniques",
+              "name": "Traceability Methodology",
               "description": {
-                "text": "Put in process AI business use case and solution-specific monitoring techniques, such as model decay, fairness, security, and anomaly detection."
+                "text": "Develop a standardized methodology to trace, explain, and justify AI solution outcomes. "
               }
             },
             {
-              "name": "Define Systematic Monitoring Process",
+              "name": "Stakeholder Inclusion",
               "description": {
-                "text": "Define a systematic approach and process for monitoring, evaluating, and responding to AI system outputs for inaccuracy, instability, discrimination, leakage of private data, and security vulnerabilities."
+                "text": "Include people affected by the outcomes of AI-based decisions in the design and use discussions from the beginning and throughout the project lifecycle. "
               }
             },
             {
-              "name": "Direct Corrective Actions",
+              "name": "Compliance and Auditing",
               "description": {
-                "text": "Monitor post-deployment AI initiatives' results and use performance anomaly results to direct corrective actions to improve outcomes."
-              }
-            },
-            {
-              "name": "Support Continuous Improvement",
-              "description": {
-                "text": "Collect data from post-deployment AI performance anomalies to support continuous improvements of enterprise-wide monitoring, evaluating, and responding activities."
+                "text": "Establish and monitor enterprise-based approaches that enforce transparency and justification of AI solution outcomes through compliance audits and checks and balances. "
               }
             }
           ]
+        },
+        {
+          "name": "Transparency by Design",
+          "description": {
+            "text": "Implement technical standards, blueprints, and design guidance to ensure transparency and explainability in AI systems. "
+          }
         }
       ]
     },
     {
-      "name": "Robust and Reliable",
+      "name": "Human-Centric, Fair, and Equitable",
       "skills": [
         {
-          "name": "Ensuring Lifecycle Quality",
+          "name": "Bias and Fairness",
           "description": {
-            "text": "Ensure AI systems are well-defined, designed, and tested across the entire lifecycle—including operations—to ensure that they execute in accordance with their intended purpose, avoid failures, and meet required quality parameters."
+            "text": "Design AI systems to actively avoid bias and prevent unfair or unintended discriminatory or inequitable consequences. "
           },
           "skills": [
             {
-              "name": "Evaluate Reliability Approaches",
+              "name": "Bias Evaluation",
               "description": {
-                "text": "Evaluate and test AI-specific reliability and robustness approaches and models for viability in determining that AI solutions meet quality requirements and intended use."
+                "text": "Define and use standards, guidelines, and tools to evaluate and mitigate bias in AI systems and training data. "
               }
             },
             {
-              "name": "Utilize Tested Approaches",
+              "name": "Responsible Use Policies",
               "description": {
-                "text": "Make available and utilize tested and defined approaches for assuring robust and reliable AI solutions, considering test data results and post-deployment monitoring measures."
+                "text": "Develop and approve a set of policies and standards that ensure the responsible, fair, and equitable use of AI solutions. "
               }
             },
             {
-              "name": "Improve Outcomes with Monitoring",
+              "name": "Human Rights Assessment",
               "description": {
-                "text": "Monitor post-deployment AI initiatives' results and use performance anomaly results to direct corrective actions to improve outcomes."
-              }
-            },
-            {
-              "name": "Drive Continuous Improvements",
-              "description": {
-                "text": "Collect data from post-deployment AI performance anomalies to support continuous improvements of enterprise-wide monitoring, evaluating, and responding activities."
+                "text": "Monitor and measure adherence to ethical practices and human rights assessments of fairness and equitability. "
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "User Trust",
-      "skills": [
+        },
         {
-          "name": "Promoting Appropriate Levels of Trust",
+          "name": "Human Well-being",
           "description": {
-            "text": "Support repeatability, traceability, transparency, and explainability with due diligence processes, standards, and techniques to design, measure, and calibrate AI solutions."
-          },
-          "skills": [
-            {
-              "name": "Develop Due Diligence Processes",
-              "description": {
-                "text": "Develop due diligence processes, techniques, and standards to measure trust, detect and evaluate miscalibrations, and enable stakeholder communication."
-              }
-            },
-            {
-              "name": "Define and Approve Processes",
-              "description": {
-                "text": "Define and approve due diligence processes, techniques, standards, and communication mechanisms to measure trust and to detect, evaluate, and correct miscalibrations."
-              }
-            },
-            {
-              "name": "Actively Monitor Trust Metrics",
-              "description": {
-                "text": "Ensure due diligence processes, techniques, and standards are present at an enterprise level, and that AI initiatives are actively monitoring trust metrics."
-              }
-            },
-            {
-              "name": "Improve Based on Incident Analysis",
-              "description": {
-                "text": "Apply due diligence processes, techniques, and standards to AI initiatives, and improve them based on quantitative analysis of incidents."
-              }
-            }
-          ]
+            "text": "Ensure AI systems are designed to accommodate and promote human rights, diversity, and overall well-being. "
+          }
         }
       ]
     }
   ]
-}
+};

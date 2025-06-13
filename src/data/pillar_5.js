@@ -1,153 +1,116 @@
-{
-  "name": "Data",
+export const pillar1Collection = {
+  "name": "Ethical, Equitable, and Responsible Use",
   "areas": [
     {
-      "name": "Architecture",
+      "name": "Responsible, Governable, and Contestable",
       "skills": [
         {
-          "name": "Organizing and Maintaining Data",
+          "name": "Governance and Compliance",
           "description": {
-            "text": "Establish a process for ingesting, storing, organizing, and maintaining the data created and collected by the organization, including its lexicon and ontology."
+            "text": "Establish and enforce oversight for AI system development and outcomes to ensure compliance with regulations and enterprise-wide standards. "
           },
           "skills": [
             {
-              "name": "Develop Initial Data Architecture",
+              "name": "Accountability Processes",
               "description": {
-                "text": "Begin the development of an initial AI data architecture/framework."
+                "text": "Develop and implement processes to ensure accountability for AI system outputs and decisions. "
               }
             },
             {
-              "name": "Approve Enterprise-Wide Framework",
+              "name": "Contestability Mechanisms",
               "description": {
-                "text": "Put in place an approved enterprise-wide data architecture/framework that is consistent with the AI implementation plan and the needs of AI initiatives."
+                "text": "Create timely processes that allow users and those impacted to challenge or appeal AI system outputs and use. "
               }
             },
             {
-              "name": "Implement and Monitor",
+              "name": "Monitoring and Reporting",
               "description": {
-                "text": "Implement, consistently utilize, and monitor an enterprise-wide data architecture/framework."
-              }
-            },
-            {
-              "name": "Optimize for Evolving Needs",
-              "description": {
-                "text": "Utilize an optimized common data architecture/framework across the enterprise that is updated to meet the evolving needs of AI initiatives."
+                "text": "Routinely utilize and monitor enforcement practices for accountable and contestable AI solutions, including reporting on compliance. "
               }
             }
           ]
+        },
+        {
+          "name": "Delegation Policies",
+          "description": {
+            "text": "Formulate a policy or framework for identifying which decisions and operations should never be delegated to AI systems. "
+          }
         }
       ]
     },
     {
-      "name": "Security and Privacy",
+      "name": "Transparency",
       "skills": [
         {
-          "name": "Protecting Digital Information",
+          "name": "Explainability and Justification",
           "description": {
-            "text": "Embed and uphold the protection of privacy rights and data security rights for AI to control the safety, specificity, and exchange of personal digital information."
+            "text": "Ensure that AI system decisions, outputs, and outcomes are explainable and justifiable to all stakeholders. "
           },
           "skills": [
             {
-              "name": "Define Security and Privacy Approaches",
+              "name": "Traceability Methodology",
               "description": {
-                "text": "Consider and process AI-specific privacy and data-security rights, approaches, and standards for individual control."
+                "text": "Develop a standardized methodology to trace, explain, and justify AI solution outcomes. "
               }
             },
             {
-              "name": "Approve Rights and Standards",
+              "name": "Stakeholder Inclusion",
               "description": {
-                "text": "Define and approve AI-specific privacy and data security rights, approaches, and standards for individual control of safety, specificity, and exchange of digital information."
+                "text": "Include people affected by the outcomes of AI-based decisions in the design and use discussions from the beginning and throughout the project lifecycle. "
               }
             },
             {
-              "name": "Manage and Monitor",
+              "name": "Compliance and Auditing",
               "description": {
-                "text": "Manage and monitor enterprise-wide, AI-specific privacy and data security rights, approaches, and standards."
-              }
-            },
-            {
-              "name": "Optimize Based on Data Trends",
-              "description": {
-                "text": "Improve and optimize enterprise-wide, AI-specific privacy and data security rights, approaches, and standards based upon data trends."
+                "text": "Establish and monitor enterprise-based approaches that enforce transparency and justification of AI solution outcomes through compliance audits and checks and balances. "
               }
             }
           ]
+        },
+        {
+          "name": "Transparency by Design",
+          "description": {
+            "text": "Implement technical standards, blueprints, and design guidance to ensure transparency and explainability in AI systems. "
+          }
         }
       ]
     },
     {
-      "name": "AI Data Governance",
+      "name": "Human-Centric, Fair, and Equitable",
       "skills": [
         {
-          "name": "Managing Data Performance and Compliance",
+          "name": "Bias and Fairness",
           "description": {
-            "text": "Establish a process for managing AI data performance and compliance to guard against data bias and ensure availability, usability, and integrity of data in AI systems."
+            "text": "Design AI systems to actively avoid bias and prevent unfair or unintended discriminatory or inequitable consequences. "
           },
           "skills": [
             {
-              "name": "Define Initial Governance Framework",
+              "name": "Bias Evaluation",
               "description": {
-                "text": "Begin defining an initial AI data governance entity/framework."
+                "text": "Define and use standards, guidelines, and tools to evaluate and mitigate bias in AI systems and training data. "
               }
             },
             {
-              "name": "Approve Framework and Perform Initial Audits",
+              "name": "Responsible Use Policies",
               "description": {
-                "text": "Put in place an approved AI data governance entity/framework and perform initial audits."
+                "text": "Develop and approve a set of policies and standards that ensure the responsible, fair, and equitable use of AI solutions. "
               }
             },
             {
-              "name": "Utilize with Audits and Metrics",
+              "name": "Human Rights Assessment",
               "description": {
-                "text": "Utilize an enterprise-wide AI data governance entity/framework with audits and monitoring, supported by metrics."
-              }
-            },
-            {
-              "name": "Improve Performance Over Time",
-              "description": {
-                "text": "Utilize an enterprise-wide AI data governance entity/framework with metrics and monitoring mechanisms to improve data performance and compliance over time."
+                "text": "Monitor and measure adherence to ethical practices and human rights assessments of fairness and equitability. "
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "name": "Accessibility",
-      "skills": [
+        },
         {
-          "name": "Managing Secure Data Sharing",
+          "name": "Human Well-being",
           "description": {
-            "text": "Provide a systematic approach and structure to address the challenges, legal agreements, and requirements needed for managing trusted and secure data sharing, both internally and externally."
-          },
-          "skills": [
-            {
-              "name": "Develop Data-Sharing Framework",
-              "description": {
-                "text": "Put a data-sharing framework in process to provide common data-sharing agreements and facilitate data cataloging and decoupling from applications."
-              }
-            },
-            {
-              "name": "Approve and Implement Framework",
-              "description": {
-                "text": "Put in place an approved data-sharing framework and agreements that provide the data availability, accessibility, and quality needed to support AI."
-              }
-            },
-            {
-              "name": "Routinely Use and Verify",
-              "description": {
-                "text": "Routinely use a data-sharing framework and agreements, verifying with metrics to support consistency in data usage."
-              }
-            },
-            {
-              "name": "Improve with Analytics",
-              "description": {
-                "text": "Improve an enterprise-wide data-sharing service framework and agreements based on collected data analytics and best practices."
-              }
-            }
-          ]
+            "text": "Ensure AI systems are designed to accommodate and promote human rights, diversity, and overall well-being. "
+          }
         }
       ]
     }
   ]
-}
+};

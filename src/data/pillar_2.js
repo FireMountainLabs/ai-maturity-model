@@ -1,116 +1,116 @@
-{
-  "name": "Strategy & Resources",
+export const pillar1Collection = {
+  "name": "Ethical, Equitable, and Responsible Use",
   "areas": [
     {
-      "name": "AI Strategic Plan",
+      "name": "Responsible, Governable, and Contestable",
       "skills": [
         {
-          "name": "Plan Formulation",
+          "name": "Governance and Compliance",
           "description": {
-            "text": "Develop and formalize a plan for achieving the defined AI mission, vision, policies, and standards for the organization. "
+            "text": "Establish and enforce oversight for AI system development and outcomes to ensure compliance with regulations and enterprise-wide standards. "
           },
           "skills": [
             {
-              "name": "Defining Core Elements",
+              "name": "Accountability Processes",
               "description": {
-                "text": "Begin defining an AI mission/vision statement, along with the necessary policies, standards, leadership roles, and budget. "
+                "text": "Develop and implement processes to ensure accountability for AI system outputs and decisions. "
               }
             },
             {
-              "name": "Achieving Objectives",
+              "name": "Contestability Mechanisms",
               "description": {
-                "text": "Establish an approved AI mission/vision statement, leadership roles, and budget that are actively achieving defined objectives and outcomes. "
+                "text": "Create timely processes that allow users and those impacted to challenge or appeal AI system outputs and use. "
               }
             },
             {
-              "name": "Monitoring and Articulation",
+              "name": "Monitoring and Reporting",
               "description": {
-                "text": "Ensure the AI mission, vision, strategy, policies, and standards are clearly articulated, with leadership actively engaged in monitoring outcomes and objectives. "
-              }
-            },
-            {
-              "name": "Continuous Review and Update",
-              "description": {
-                "text": "Continually review, modify, and update the AI strategy, policies, and standards to improve organizational outcomes and define future capabilities. "
+                "text": "Routinely utilize and monitor enforcement practices for accountable and contestable AI solutions, including reporting on compliance. "
               }
             }
           ]
+        },
+        {
+          "name": "Delegation Policies",
+          "description": {
+            "text": "Formulate a policy or framework for identifying which decisions and operations should never be delegated to AI systems. "
+          }
         }
       ]
     },
     {
-      "name": "Partnerships",
+      "name": "Transparency",
       "skills": [
         {
-          "name": "Partnership Development",
+          "name": "Explainability and Justification",
           "description": {
-            "text": "Form and leverage AI partnerships with government, private enterprises, academic institutions, and/or FFRDCs to ensure a variety of perspectives are represented. "
+            "text": "Ensure that AI system decisions, outputs, and outcomes are explainable and justifiable to all stakeholders. "
           },
           "skills": [
             {
-              "name": "Formation of Partnerships",
+              "name": "Traceability Methodology",
               "description": {
-                "text": "Begin forming AI partnerships with industry, academia, or other agencies. "
+                "text": "Develop a standardized methodology to trace, explain, and justify AI solution outcomes. "
               }
             },
             {
-              "name": "Inclusion of Ethical Practices",
+              "name": "Stakeholder Inclusion",
               "description": {
-                "text": "Establish partnerships where ethical and responsible-use practices are included within the partnership agreements. "
+                "text": "Include people affected by the outcomes of AI-based decisions in the design and use discussions from the beginning and throughout the project lifecycle. "
               }
             },
             {
-              "name": "Application of Information",
+              "name": "Compliance and Auditing",
               "description": {
-                "text": "Apply information and insights gained from academic, industry, and agency partnerships to inform and enhance internal AI initiatives. "
-              }
-            },
-            {
-              "name": "Process for Improvement",
-              "description": {
-                "text": "Establish a formal process for identifying, initiating, and executing new collaborative partnerships to continuously improve AI outcomes. "
+                "text": "Establish and monitor enterprise-based approaches that enforce transparency and justification of AI solution outcomes through compliance audits and checks and balances. "
               }
             }
           ]
+        },
+        {
+          "name": "Transparency by Design",
+          "description": {
+            "text": "Implement technical standards, blueprints, and design guidance to ensure transparency and explainability in AI systems. "
+          }
         }
       ]
     },
     {
-      "name": "Governance",
+      "name": "Human-Centric, Fair, and Equitable",
       "skills": [
         {
-          "name": "Governance Implementation",
+          "name": "Bias and Fairness",
           "description": {
-            "text": "Establish AI governance structures, standardized processes, policies, and audits to promote conformance with the organization's ethics, regulations, and policies. "
+            "text": "Design AI systems to actively avoid bias and prevent unfair or unintended discriminatory or inequitable consequences. "
           },
           "skills": [
             {
-              "name": "Initiation of Governance",
+              "name": "Bias Evaluation",
               "description": {
-                "text": "Initiate AI governance structures and processes to guide and oversee how AI is developed and used within the organization. "
+                "text": "Define and use standards, guidelines, and tools to evaluate and mitigate bias in AI systems and training data. "
               }
             },
             {
-              "name": "Establishment and Accountability",
+              "name": "Responsible Use Policies",
               "description": {
-                "text": "Ensure AI governance and processes are formally established, identify accountable executives, and implement audits. "
+                "text": "Develop and approve a set of policies and standards that ensure the responsible, fair, and equitable use of AI solutions. "
               }
             },
             {
-              "name": "Routine Execution and Metrics",
+              "name": "Human Rights Assessment",
               "description": {
-                "text": "Routinely carry out AI governance with participation from across the organization, and consistently collect metrics to ensure adherence to defined standards. "
-              }
-            },
-            {
-              "name": "Active Improvement",
-              "description": {
-                "text": "Actively engage the governance body in improving AI solution development and utilization by re-evaluating and updating existing standards, processes, policies, and procedures. "
+                "text": "Monitor and measure adherence to ethical practices and human rights assessments of fairness and equitability. "
               }
             }
           ]
+        },
+        {
+          "name": "Human Well-being",
+          "description": {
+            "text": "Ensure AI systems are designed to accommodate and promote human rights, diversity, and overall well-being. "
+          }
         }
       ]
     }
   ]
-}
+};

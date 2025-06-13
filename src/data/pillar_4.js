@@ -1,116 +1,116 @@
-{
-  "name": "Technology Enablers",
+export const pillar1Collection = {
+  "name": "Ethical, Equitable, and Responsible Use",
   "areas": [
     {
-      "name": "AI Innovation",
+      "name": "Responsible, Governable, and Contestable",
       "skills": [
         {
-          "name": "Integrating AI into Business Operations",
+          "name": "Governance and Compliance",
           "description": {
-            "text": "Establish a process where research, systems engineering, and human-machine design principles and best practices integrate AI into business operations."
+            "text": "Establish and enforce oversight for AI system development and outcomes to ensure compliance with regulations and enterprise-wide standards. "
           },
           "skills": [
             {
-              "name": "Approach Development",
+              "name": "Accountability Processes",
               "description": {
-                "text": "Develop an approach to AI-specific systems engineering and Human-Machine practices."
+                "text": "Develop and implement processes to ensure accountability for AI system outputs and decisions. "
               }
             },
             {
-              "name": "Approach Approval and Implementation",
+              "name": "Contestability Mechanisms",
               "description": {
-                "text": "Put an approved approach to AI-specific systems engineering and Human-Machine practices in place."
+                "text": "Create timely processes that allow users and those impacted to challenge or appeal AI system outputs and use. "
               }
             },
             {
-              "name": "Widespread Adoption and Measurement",
+              "name": "Monitoring and Reporting",
               "description": {
-                "text": "Ensure the approved approach to AI-specific systems engineering and Human-Machine practices is widespread and communicated, and collect and analyze metrics to measure effectiveness."
-              }
-            },
-            {
-              "name": "Refinement and Alignment",
-              "description": {
-                "text": "Refine the approach to AI-specific systems engineering and Human-Machine practices to better achieve alignment with enterprise objectives."
+                "text": "Routinely utilize and monitor enforcement practices for accountable and contestable AI solutions, including reporting on compliance. "
               }
             }
           ]
+        },
+        {
+          "name": "Delegation Policies",
+          "description": {
+            "text": "Formulate a policy or framework for identifying which decisions and operations should never be delegated to AI systems. "
+          }
         }
       ]
     },
     {
-      "name": "Test and Evaluation",
+      "name": "Transparency",
       "skills": [
         {
-          "name": "Ensuring Solution Quality",
+          "name": "Explainability and Justification",
           "description": {
-            "text": "Use AI-specific Test & Evaluation (T&E) standards to ensure that solution requirements are verified and validated to meet all identified requirements."
+            "text": "Ensure that AI system decisions, outputs, and outcomes are explainable and justifiable to all stakeholders. "
           },
           "skills": [
             {
-              "name": "Utilizing AI-Specific Techniques",
+              "name": "Traceability Methodology",
               "description": {
-                "text": "Utilize AI-specific T&E techniques such as data processing, optimization, training code unit tests, AI-specific integration strategies, basic model debugging, bias, and human-centric validation."
+                "text": "Develop a standardized methodology to trace, explain, and justify AI solution outcomes. "
               }
             },
             {
-              "name": "Standardizing Advanced Approaches",
+              "name": "Stakeholder Inclusion",
               "description": {
-                "text": "Define and standardize AI-specialized test approaches, such as data sensitivity and residual analysis, benchmark models, discrimination testing, and security audits."
+                "text": "Include people affected by the outcomes of AI-based decisions in the design and use discussions from the beginning and throughout the project lifecycle. "
               }
             },
             {
-              "name": "Integration and Auditing",
+              "name": "Compliance and Auditing",
               "description": {
-                "text": "Integrate AI T&E standards into acquisition and operations processes; audit AI solution test results and collect measures to ensure solutions meet quality targets and acceptance criteria."
-              }
-            },
-            {
-              "name": "Enterprise-Wide Continuous Improvement",
-              "description": {
-                "text": "Establish enterprise-based AI T&E standards and processes where improvement is facilitated through continual testing and development trend analysis to improve product solution outcomes."
+                "text": "Establish and monitor enterprise-based approaches that enforce transparency and justification of AI solution outcomes through compliance audits and checks and balances. "
               }
             }
           ]
+        },
+        {
+          "name": "Transparency by Design",
+          "description": {
+            "text": "Implement technical standards, blueprints, and design guidance to ensure transparency and explainability in AI systems. "
+          }
         }
       ]
     },
     {
-      "name": "AI Platforms",
+      "name": "Human-Centric, Fair, and Equitable",
       "skills": [
         {
-          "name": "Enabling AI Development and Operation",
+          "name": "Bias and Fairness",
           "description": {
-            "text": "Provide a defined set of enabling architecture, standards, computer networking, hardware, and software tools designed to support the development, integration, and operation of AI solutions."
+            "text": "Design AI systems to actively avoid bias and prevent unfair or unintended discriminatory or inequitable consequences. "
           },
           "skills": [
             {
-              "name": "Identification and Acquisition",
+              "name": "Bias Evaluation",
               "description": {
-                "text": "Identify and acquire AI-specific platforms, processes, and tools (including test tool sets) to support initiatives and projects."
+                "text": "Define and use standards, guidelines, and tools to evaluate and mitigate bias in AI systems and training data. "
               }
             },
             {
-              "name": "Availability",
+              "name": "Responsible Use Policies",
               "description": {
-                "text": "Make AI-specific platforms, tools, and processes available to support initiatives and projects."
+                "text": "Develop and approve a set of policies and standards that ensure the responsible, fair, and equitable use of AI solutions. "
               }
             },
             {
-              "name": "Performance Monitoring",
+              "name": "Human Rights Assessment",
               "description": {
-                "text": "Routinely monitor AI-optimized platforms to capture platform performance data and support technology refreshment."
-              }
-            },
-            {
-              "name": "Performance-Based Enhancement",
-              "description": {
-                "text": "Use AI-optimized platforms for initiatives and projects and enhance them based on collected performance data."
+                "text": "Monitor and measure adherence to ethical practices and human rights assessments of fairness and equitability. "
               }
             }
           ]
+        },
+        {
+          "name": "Human Well-being",
+          "description": {
+            "text": "Ensure AI systems are designed to accommodate and promote human rights, diversity, and overall well-being. "
+          }
         }
       ]
     }
   ]
-}
+};

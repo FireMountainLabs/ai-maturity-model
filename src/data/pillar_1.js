@@ -1,4 +1,4 @@
-{
+export const pillar1Collection = {
   "name": "Ethical, Equitable, and Responsible Use",
   "areas": [
     {
@@ -113,4 +113,4 @@
       ]
     }
   ]
-}
+};

@@ -1,116 +1,116 @@
-{
-  "name": "Organization",
+export const pillar1Collection = {
+  "name": "Ethical, Equitable, and Responsible Use",
   "areas": [
     {
-      "name": "Culture",
+      "name": "Responsible, Governable, and Contestable",
       "skills": [
         {
-          "name": "Fostering an AI-Ready Culture",
+          "name": "Governance and Compliance",
           "description": {
-            "text": "Nurture organizational norms and values that support an adaptive and risk-tolerant culture that is ready to accept the types of changes that AI might entail. "
+            "text": "Establish and enforce oversight for AI system development and outcomes to ensure compliance with regulations and enterprise-wide standards. "
           },
           "skills": [
             {
-              "name": "Cultural Evaluation",
+              "name": "Accountability Processes",
               "description": {
-                "text": "Evaluate the organization's existing culture and identify the changes needed for successful AI adoption. "
+                "text": "Develop and implement processes to ensure accountability for AI system outputs and decisions. "
               }
             },
             {
-              "name": "Strategy Implementation",
+              "name": "Contestability Mechanisms",
               "description": {
-                "text": "Identify necessary cultural changes for successful AI adoption, and put an implementation strategy and training in place to begin execution. "
+                "text": "Create timely processes that allow users and those impacted to challenge or appeal AI system outputs and use. "
               }
             },
             {
-              "name": "Monitoring and Measurement",
+              "name": "Monitoring and Reporting",
               "description": {
-                "text": "Ensure the acceptance of AI use is widespread by monitoring, measuring, and analyzing cultural changes in alignment with responsible use policies. "
-              }
-            },
-            {
-              "name": "Adaptive Culture",
-              "description": {
-                "text": "Achieve an enterprise-wide culture that accepts and embraces AI, with adaptive and action-oriented behaviors that ensure innovative and responsible AI outcomes. "
+                "text": "Routinely utilize and monitor enforcement practices for accountable and contestable AI solutions, including reporting on compliance. "
               }
             }
           ]
+        },
+        {
+          "name": "Delegation Policies",
+          "description": {
+            "text": "Formulate a policy or framework for identifying which decisions and operations should never be delegated to AI systems. "
+          }
         }
       ]
     },
     {
-      "name": "Organizational Structure",
+      "name": "Transparency",
       "skills": [
         {
-          "name": "Defining AI Structure",
+          "name": "Explainability and Justification",
           "description": {
-            "text": "Define, document, and execute AI-specific structures, roles, and processes within the enterprise. "
+            "text": "Ensure that AI system decisions, outputs, and outcomes are explainable and justifiable to all stakeholders. "
           },
           "skills": [
             {
-              "name": "Initial Structure Definition",
+              "name": "Traceability Methodology",
               "description": {
-                "text": "Establish rudimentary but functional enterprise-based AI structures, with limited definition and documentation of roles and processes. "
+                "text": "Develop a standardized methodology to trace, explain, and justify AI solution outcomes. "
               }
             },
             {
-              "name": "Formalization of Structure",
+              "name": "Stakeholder Inclusion",
               "description": {
-                "text": "Formally define the AI structures, roles, and processes for the entity. "
+                "text": "Include people affected by the outcomes of AI-based decisions in the design and use discussions from the beginning and throughout the project lifecycle. "
               }
             },
             {
-              "name": "Resource and Monitor Performance",
+              "name": "Compliance and Auditing",
               "description": {
-                "text": "Enable the defined AI structures, roles, and processes with applied resources to monitor and measure performance. "
-              }
-            },
-            {
-              "name": "Continuous Improvement",
-              "description": {
-                "text": "Utilize metrics from defined, documented, and measured enterprise-based AI structures, roles, and processes to improve activities and implement best practices. "
+                "text": "Establish and monitor enterprise-based approaches that enforce transparency and justification of AI solution outcomes through compliance audits and checks and balances. "
               }
             }
           ]
+        },
+        {
+          "name": "Transparency by Design",
+          "description": {
+            "text": "Implement technical standards, blueprints, and design guidance to ensure transparency and explainability in AI systems. "
+          }
         }
       ]
     },
     {
-      "name": "Workforce Development",
+      "name": "Human-Centric, Fair, and Equitable",
       "skills": [
         {
-          "name": "Building an AI Workforce",
+          "name": "Bias and Fairness",
           "description": {
-            "text": "Establish processes for diverse AI teams' training, recruitment, and career impact awareness to develop and reshape the organizational workforce for AI. "
+            "text": "Design AI systems to actively avoid bias and prevent unfair or unintended discriminatory or inequitable consequences. "
           },
           "skills": [
             {
-              "name": "Plan Development",
+              "name": "Bias Evaluation",
               "description": {
-                "text": "Put an AI workforce development plan into process. "
+                "text": "Define and use standards, guidelines, and tools to evaluate and mitigate bias in AI systems and training data. "
               }
             },
             {
-              "name": "Plan Implementation",
+              "name": "Responsible Use Policies",
               "description": {
-                "text": "Implement the AI workforce development plan to impact resource needs within existing initiatives, with required workshops and certifications occurring. "
+                "text": "Develop and approve a set of policies and standards that ensure the responsible, fair, and equitable use of AI solutions. "
               }
             },
             {
-              "name": "Meeting and Defining Needs",
+              "name": "Human Rights Assessment",
               "description": {
-                "text": "Ensure the workforce development plan is meeting current expectations and capturing metrics to define current and future workforce needs for an expanding portfolio. "
-              }
-            },
-            {
-              "name": "Optimization with Metrics",
-              "description": {
-                "text": "Utilize metrics from defined, documented, and measured enterprise-based AI structures, roles, and processes to improve activities and implement best practices. "
+                "text": "Monitor and measure adherence to ethical practices and human rights assessments of fairness and equitability. "
               }
             }
           ]
+        },
+        {
+          "name": "Human Well-being",
+          "description": {
+            "text": "Ensure AI systems are designed to accommodate and promote human rights, diversity, and overall well-being. "
+          }
         }
       ]
     }
   ]
-}
+};
