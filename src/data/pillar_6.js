@@ -1,4 +1,3 @@
-```json
 {
   "name": "Performance & Application",
   "areas": [
@@ -152,4 +151,3 @@
     }
   ]
 }
-```
