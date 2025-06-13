@@ -56,12 +56,14 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        # Remove the 'enablement: false' line from here if it exists.
+        # No 'enablement' parameter needed if you've already configured on GitHub UI.
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # IMPORTANT: Change 'path' to your build output directory!
           # Common paths: build, dist, public, _site
-          path: './build' # <--- CHANGE THIS if your build output is different!
+          path: './docs' # <--- CHANGED THIS LINE TO './docs'!
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
