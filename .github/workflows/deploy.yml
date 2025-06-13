@@ -1,0 +1,67 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Trigger on pushes to the main branch
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # --- Custom Build Step: REPLACE THIS SECTION BASED ON YOUR PROJECT ---
+      # Example for Node.js (React, Vue, plain JS build tools):
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Or your desired Node.js version
+          cache: 'npm' # Use 'npm', 'yarn', or 'pnpm' based on your project
+      - name: Install dependencies
+        run: npm install # Or yarn install, pnpm install
+      - name: Build project
+        run: npm run build # Or yarn build, pnpm build (this should output to a 'build' or 'dist' folder)
+        env:
+          CI: true # Essential for many React projects to avoid warnings as errors
+
+      # Example for Jekyll (if it's a Jekyll site):
+      # - name: Setup Ruby
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: '3.x' # Use your Jekyll's required Ruby version
+      #     bundler-cache: true
+      # - name: Build Jekyll site
+      #   run: bundle exec jekyll build --destination ./_site
+
+      # Example for Hugo (if it's a Hugo site):
+      # - name: Setup Hugo
+      #   uses: peaceiris/actions-hugo@v2
+      #   with:
+      #     hugo-version: 'latest' # Or a specific version like '0.125.0'
+      #     extended: true
+      # - name: Build Hugo site
+      #   run: hugo --minify
+
+      # --- End Custom Build Step ---
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # IMPORTANT: Change 'path' to your build output directory!
+          # Common paths: build, dist, public, _site
+          path: './build' # <--- CHANGE THIS if your build output is different!
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
