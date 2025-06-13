@@ -1,16 +1,16 @@
 {
-	"name": "AIMaturityModel",
+	"name": "ai-maturity-model",
 	"description": "A visual overview of useful skills to learn as a web developer",
 	"type": "module",
 	"license": "MIT",
-	"author": "Andreas Mehlsen",
+	"author": "Chris Ward",
 	"bugs": {
-		"url": "https://github.com/FireMountainLabs/AIMaturityModel/issues"
+		"url": "https://github.com/FireMountainLabs/ai-maturity-modell/issues"
 	},
-	"homepage": "https://github.com/FireMountainLabs/AIMaturityModel#readme",
+	"homepage": "https://github.com/FireMountainLabs/ai-maturity-modell#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/FireMountainLabs/AIMaturityModel.git"
+		"url": "git+https://github.com/FireMountainLabs/ai-maturity-modell.git"
 	},
 	"keywords": [
 		"web",
