@@ -1,1 +1,1 @@
-# ai-maturity-model
+# AI Maturity Model

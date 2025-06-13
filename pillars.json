@@ -1,0 +1,56 @@
+{
+    "skillTreeName": "AI Maturity Model",
+    "pillars": [
+      {
+        "name": "Ethical, Equitable, & Responsible Use",
+        "elements": [
+          { "name": "Responsible, Governable, & Contestable" },
+          { "name": "Transparency" },
+          { "name": "Human-Centric, Fair, & Equitable" }
+        ]
+      },
+      {
+        "name": "Strategy & Resources",
+        "elements": [
+          { "name": "AI Strategic Plan" },
+          { "name": "Partnerships" },
+          { "name": "Governance" }
+        ]
+      },
+      {
+        "name": "Organization",
+        "elements": [
+          { "name": "Culture" },
+          { "name": "Organizational Structure" },
+          { "name": "Workforce Development" }
+        ]
+      },
+      {
+        "name": "Technology Enablers",
+        "elements": [
+          { "name": "AI Innovation" },
+          { "name": "Test & Evaluation" },
+          { "name": "AI Platforms" }
+        ]
+      },
+      {
+        "name": "Data",
+        "elements": [
+          { "name": "Architecture" },
+          { "name": "Security & Privacy" },
+          { "name": "AI Data Governance" },
+          { "name": "Accessibility" }
+        ]
+      },
+      {
+        "name": "Performance & Application",
+        "elements": [
+          { "name": "Usage & Adoption" },
+          { "name": "Solution Monitoring" },
+          { "name": "Robust and Reliable" },
+          { "name": "User Trust" }
+        ]
+      }
+    ]
+  }
+  
