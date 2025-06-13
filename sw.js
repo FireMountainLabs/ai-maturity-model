@@ -1,5 +1,5 @@
 const SW_VERSION = 7;
-const APP_PREFIX = "AIMaturityModel";
+const APP_PREFIX = "ai-maturity-model";
 const CACHE_NAME = `${APP_PREFIX}-v${SW_VERSION}`;
 const DEBUG = false;
 const URLS_TO_CACHE = [

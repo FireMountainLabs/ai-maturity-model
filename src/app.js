@@ -690,7 +690,7 @@ export class App extends LitElement {
 			</div>
 			<header id="header">
 				<div>
-					<a href="https://github.com/FireMountainLabs/AIMaturityModel" target="_blank" rel="noopener" aria-label="Open Github" title="Open Github">
+					<a href="https://github.com/FireMountainLabs/ai-maturity-model" target="_blank" rel="noopener" aria-label="Open Github" title="Open Github">
 						<ws-icon hoverable .template="${githubIconTemplate}"></ws-icon>
 					</a>
 					${user != null ? html`
@@ -732,7 +732,7 @@ export class App extends LitElement {
 					` : html`
 						<ws-button @click="${signIn}">🔒 Sign in with Google</ws-button>
 					`}
-					<a href="https://github.com/FireMountainLabs/AIMaturityModel/stargazers" target="_blank" aria-label="Become a stargazer" rel="noopener">
+					<a href="https://github.com/FireMountainLabs/ai-maturity-model/stargazers" target="_blank" aria-label="Become a stargazer" rel="noopener">
 						<ws-button>⭐️ Become a stargazer</ws-button>
 					</a>
 					<a href="https://twitter.com/AndreasMehlsen" target="_blank" aria-label="Open Twitter" rel="noopener">

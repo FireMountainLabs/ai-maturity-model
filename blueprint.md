@@ -1,10 +1,10 @@
 <h1 align="center">Web Skills</h1>
 <p align="center">
-	Web Skills is a visual overview of useful skills to learn as a web developer. Go to <a href="https://FireMountainLabs.github.io/AIMaturityModel" target="_blank" aria-label="Link to Web Skills">https://FireMountainLabs.github.io/AIMaturityModel</a> to check out the visual overview or scroll through this readme to get the overview <a href="#-fundamentals" target="_blank" aria-label="Link to list of skills">as a list</a>. If you like the project you are very welcome to <a href="https://github.com/FireMountainLabs/AIMaturityModel/stargazers" aria-label="Become stargazer link">become a stargazer 🤩</a>
+	Web Skills is a visual overview of useful skills to learn as a web developer. Go to <a href="https://FireMountainLabs.github.io/ai-maturity-model" target="_blank" aria-label="Link to Web Skills">https://FireMountainLabs.github.io/ai-maturity-model</a> to check out the visual overview or scroll through this readme to get the overview <a href="#-fundamentals" target="_blank" aria-label="Link to list of skills">as a list</a>. If you like the project you are very welcome to <a href="https://github.com/FireMountainLabs/ai-maturity-model/stargazers" aria-label="Become stargazer link">become a stargazer 🤩</a>
 </p> 
 <p align="center">
-	<a href="http://FireMountainLabs.github.io/AIMaturityModel" target="_blank">
-		<img src="https://raw.githubusercontent.com/FireMountainLabs/AIMaturityModel/master/demo.gif" alt="Web Skills Demo" width="800" />
+	<a href="http://FireMountainLabs.github.io/ai-maturity-model" target="_blank">
+		<img src="https://raw.githubusercontent.com/FireMountainLabs/ai-maturity-model/master/demo.gif" alt="Web Skills Demo" width="800" />
 	</a>
 </p>
 <br />
@@ -26,11 +26,11 @@ The skills are derived from a combination of 10 years of experience, a bachelor 
 
 ### How can I support you?
 
-I am spending my spare time building Web Skills for free because I want to help people get into web development. My motivation comes from people finding Web Skills useful, so if you like the project feel free to support me in any way you like! For example, you are more than welcome to become a [stargazer](https://github.com/FireMountainLabs/AIMaturityModel/stargazers), share Web Skills with your friends and followers or create blog articles linking to Web Skills. If you want to, it will absolutely make my day if you [support me with a cup of coffee](https://www.buymeacoffee.com/AndreasMehlsen)! <3
+I am spending my spare time building Web Skills for free because I want to help people get into web development. My motivation comes from people finding Web Skills useful, so if you like the project feel free to support me in any way you like! For example, you are more than welcome to become a [stargazer](https://github.com/FireMountainLabs/ai-maturity-model/stargazers), share Web Skills with your friends and followers or create blog articles linking to Web Skills. If you want to, it will absolutely make my day if you [support me with a cup of coffee](https://www.buymeacoffee.com/AndreasMehlsen)! <3
 
 ### How can I get involved?
 
-You are welcome to get involved in any way you like. If you want to, you can go to the [issues page](https://github.com/FireMountainLabs/AIMaturityModel/issues) and help me fix the spelling, fix issues or suggest some new features. Any involvement is highly appreciated!
+You are welcome to get involved in any way you like. If you want to, you can go to the [issues page](https://github.com/FireMountainLabs/ai-maturity-model/issues) and help me fix the spelling, fix issues or suggest some new features. Any involvement is highly appreciated!
 
 ### How can I keep track of what skills I know?
 
@@ -42,7 +42,7 @@ I totally understand if you are a bit overwhelmed by the amount of skills on the
 
 ### Why haven't you included XYZ Technology?
 
-The skills are based on what I personally find to be the most useful on a day-to-day basis. If you think something really important is missing, you can always suggest it on the [issues page](https://github.com/FireMountainLabs/AIMaturityModel/issues).
+The skills are based on what I personally find to be the most useful on a day-to-day basis. If you think something really important is missing, you can always suggest it on the [issues page](https://github.com/FireMountainLabs/ai-maturity-model/issues).
 
 ### What does the "experimental" banner mean?
 

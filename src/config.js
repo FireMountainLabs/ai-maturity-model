@@ -13,10 +13,10 @@ export const ALLOW_NATIVE_SHARE = window.innerWidth < DEFAULT_COMPACT_PX;
 
 export const FIREBASE_CONFIG = {
 	apiKey: "AIzaSyAeptLYIAEF7MtzFjKo0XYtC6i0BXbqdjI",
-	authDomain: "AIMaturityModel.firebaseapp.com",
-	databaseURL: "https://AIMaturityModel.firebaseio.com",
-	projectId: "AIMaturityModel",
-	storageBucket: "AIMaturityModel.appspot.com",
+	authDomain: "ai-maturity-model.firebaseapp.com",
+	databaseURL: "https://ai-maturity-model.firebaseio.com",
+	projectId: "ai-maturity-model",
+	storageBucket: "ai-maturity-model.appspot.com",
 	messagingSenderId: "796050122198",
 	appId: "1:796050122198:web:422fd7fee1037c3a2a3077"
 };
