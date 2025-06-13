@@ -41,7 +41,8 @@
 		"generate-blueprint": "node --experimental-modules generate-blueprint.js",
 		"readme": "npm run generate-blueprint && npx @appnest/readme generate",
 		"snowpack": "npx snowpack build --optimize --include \"src/**/*.js\" --out docs",
-		"prepare": "npm run snowpack"
+		"prepare": "npm run snowpack",
+		"build": "npm run snowpack"
 	},
 	"contributors": [
 		{
