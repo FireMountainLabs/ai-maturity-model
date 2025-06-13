@@ -9,10 +9,10 @@ import { pillar6Collection } from "./data/pillar_6.js";
  * All available collections.
  */
 export const collections = [
-	pillar1Collection,
-	pillar2Collection,
-	pillar3Collection,
-	pillar4Collection,
-	pillar5Collection,
-	pillar6Collection
+    pillar1Collection,
+    pillar2Collection,
+    pillar3Collection,
+    pillar4Collection,
+    pillar5Collection,
+    pillar6Collection
 ];
