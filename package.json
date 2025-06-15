@@ -1,6 +1,6 @@
 {
 	"name": "ai-maturity-model",
-	"description": "A visual overview of the AI maturity model",
+	"description": "A visual overview of useful skills to learn as a web developer",
 	"type": "module",
 	"license": "MIT",
 	"author": "Chris Ward",
@@ -36,7 +36,7 @@
 	"scripts": {
 		"serve": "npx servor . index.html 1614 --browse",
 		"s": "npm run serve",
-		"build": "rm -rf docs && mkdir docs && cp -r src docs/src && cp -r web_modules docs/web_modules && cp index.html docs/index.html && cp manifest.json docs/manifest.json && cp -r www docs/www",
+		"build": "npx snowpack && rm -rf docs && mkdir docs && cp -r src docs/src && cp -r web_modules docs/web_modules && cp index.html docs/index.html && cp manifest.json docs/manifest.json && cp -r www docs/www",
 		"deploy": "npm run build && npx gh-pages -d docs",
 		"firebase-deploy": "firebase deploy"
 	},
@@ -50,9 +50,9 @@
 			]
 		},
 		{
-			"name": "Chris Ward",
-			"img": "https://lh6.googleusercontent.com/xvmM2AfzuMlOsV1lCAWJX7V-HvfriY6CXqtKlbcE8J1CaEy0kSjO8cjCAdvpTLL9Zp5LPKvPLY58Mqy83JTSI0vx3Pl7Nw3k4t__Ab9fCOYLWdS5XxAMUcK3jQWoO6gSzeLCyfn-YKgg18jox430mjZ2SQyHNg_QaWTqplkjtaKgAQDEUEZlVA=w300",
-			"url": "FireMountainLabs.com"
+			"name": "You?",
+			"img": "https://joeschmoe.io/api/v1/random",
+			"url": "https://github.com/FireMountainLabs/readme/blob/master/CONTRIBUTING.md"
 		}
 	],
 	"dependencies": {
