@@ -5,12 +5,12 @@
 	"license": "MIT",
 	"author": "Chris Ward",
 	"bugs": {
-		"url": "https://github.com/FireMountainLabs/ai-maturity-modell/issues"
+		"url": "https://github.com/FireMountainLabs/ai-maturity-model/issues"
 	},
-	"homepage": "https://github.com/FireMountainLabs/ai-maturity-modell#readme",
+	"homepage": "https://github.com/FireMountainLabs/ai-maturity-model#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/FireMountainLabs/ai-maturity-modell.git"
+		"url": "git+https://github.com/FireMountainLabs/ai-maturity-model.git"
 	},
 	"keywords": [
 		"web",
