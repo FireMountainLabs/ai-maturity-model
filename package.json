@@ -5,12 +5,12 @@
 	"license": "MIT",
 	"author": "Chris Ward",
 	"bugs": {
-		"url": "https://github.com/FireMountainLabs/ai-maturity-model/issues"
+		"url": "https://github.com/FireMountainLabs/ai-maturity-modell/issues"
 	},
-	"homepage": "https://github.com/FireMountainLabs/ai-maturity-model#readme",
+	"homepage": "https://github.com/FireMountainLabs/ai-maturity-modell#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/FireMountainLabs/ai-maturity-model.git"
+		"url": "git+https://github.com/FireMountainLabs/ai-maturity-modell.git"
 	},
 	"keywords": [
 		"web",
@@ -36,7 +36,7 @@
 	"scripts": {
 		"serve": "npx servor . index.html 1614 --browse",
 		"s": "npm run serve",
-		"build": "npx snowpack && rm -rf docs && mkdir docs && cp -r src docs/src && cp -r web_modules docs/web_modules && cp index.html docs/index.html && cp manifest.json docs/manifest.json && cp -r www docs/www",
+		"build": "snowpack build --dest docs",
 		"deploy": "npm run build && npx gh-pages -d docs",
 		"firebase-deploy": "firebase deploy"
 	},
