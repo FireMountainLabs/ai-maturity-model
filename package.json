@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "lit": "^2.0.0",
-    "web-dialog": "^1.0.0"
+    "web-dialog": "0.0.11"
   },
   "devDependencies": {
     "snowpack": "^3.0.0"
