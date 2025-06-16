@@ -7,33 +7,19 @@ export const pillar1Collection = {
         {
           "name": "Governance and Compliance",
           "description": {
-            "text": "Establish and enforce oversight for AI system development and outcomes to ensure compliance with regulations and enterprise-wide standards. "
-          },
-          "skills": [
-            {
-              "name": "Accountability Processes",
-              "description": {
-                "text": "Develop and implement processes to ensure accountability for AI system outputs and decisions. "
-              }
-            },
-            {
-              "name": "Contestability Mechanisms",
-              "description": {
-                "text": "Create timely processes that allow users and those impacted to challenge or appeal AI system outputs and use. "
-              }
-            },
-            {
-              "name": "Monitoring and Reporting",
-              "description": {
-                "text": "Routinely utilize and monitor enforcement practices for accountable and contestable AI solutions, including reporting on compliance. "
-              }
-            }
-          ]
+            "text": "Oversight and governance are in place to enforce regulatory and enterprise-wide compliance of AI system development and outcomes."
+          }
         },
         {
-          "name": "Delegation Policies",
+          "name": "Accountability Processes",
           "description": {
-            "text": "Formulate a policy or framework for identifying which decisions and operations should never be delegated to AI systems. "
+            "text": "Develop and implement processes to ensure accountability for AI system outputs and decisions."
+          }
+        },
+        {
+          "name": "Contestability Mechanisms",
+          "description": {
+            "text": "Create timely processes that allow users and those impacted to challenge or appeal AI system outputs and use."
           }
         }
       ]
@@ -44,33 +30,13 @@ export const pillar1Collection = {
         {
           "name": "Explainability and Justification",
           "description": {
-            "text": "Ensure that AI system decisions, outputs, and outcomes are explainable and justifiable to all stakeholders. "
-          },
-          "skills": [
-            {
-              "name": "Traceability Methodology",
-              "description": {
-                "text": "Develop a standardized methodology to trace, explain, and justify AI solution outcomes. "
-              }
-            },
-            {
-              "name": "Stakeholder Inclusion",
-              "description": {
-                "text": "Include people affected by the outcomes of AI-based decisions in the design and use discussions from the beginning and throughout the project lifecycle. "
-              }
-            },
-            {
-              "name": "Compliance and Auditing",
-              "description": {
-                "text": "Establish and monitor enterprise-based approaches that enforce transparency and justification of AI solution outcomes through compliance audits and checks and balances. "
-              }
-            }
-          ]
+            "text": "AI systems decisions, outputs, and outcomes are explainable, justifiable, and transparent to users and those impacted by them."
+          }
         },
         {
-          "name": "Transparency by Design",
+          "name": "Traceability Methodology",
           "description": {
-            "text": "Implement technical standards, blueprints, and design guidance to ensure transparency and explainability in AI systems. "
+            "text": "Develop a standardized methodology to trace, explain, and justify AI solution outcomes."
           }
         }
       ]
@@ -81,33 +47,13 @@ export const pillar1Collection = {
         {
           "name": "Bias and Fairness",
           "description": {
-            "text": "Design AI systems to actively avoid bias and prevent unfair or unintended discriminatory or inequitable consequences. "
-          },
-          "skills": [
-            {
-              "name": "Bias Evaluation",
-              "description": {
-                "text": "Define and use standards, guidelines, and tools to evaluate and mitigate bias in AI systems and training data. "
-              }
-            },
-            {
-              "name": "Responsible Use Policies",
-              "description": {
-                "text": "Develop and approve a set of policies and standards that ensure the responsible, fair, and equitable use of AI solutions. "
-              }
-            },
-            {
-              "name": "Human Rights Assessment",
-              "description": {
-                "text": "Monitor and measure adherence to ethical practices and human rights assessments of fairness and equitability. "
-              }
-            }
-          ]
+            "text": "AI systems are designed to accommodate human rights, diversity, and well-being through use of deliberate steps to avoid bias and unfair and/or unintended discrimination or inequitable consequences."
+          }
         },
         {
-          "name": "Human Well-being",
+          "name": "Human Rights Assessment",
           "description": {
-            "text": "Ensure AI systems are designed to accommodate and promote human rights, diversity, and overall well-being. "
+            "text": "Monitor and measure adherence to ethical practices and human rights assessments of fairness and equitability."
           }
         }
       ]
