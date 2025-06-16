@@ -19,12 +19,9 @@
   "license": "MIT",
   "dependencies": {
     "lit": "2.7.0",
-    "lit-html": "2.7.0",
     "lit-element": "3.1.2",
-    "web-dialog": "0.0.11",
-    "cytoscape": "^3.28.1",
-    "cytoscape-dagre": "^2.5.0",
-    "dagre": "^0.8.5"
+    "lit-html": "2.7.0",
+    "web-dialog": "0.0.11"
   },
   "devDependencies": {
     "snowpack": "^3.8.8"
