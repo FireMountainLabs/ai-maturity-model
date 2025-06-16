@@ -4,14 +4,6 @@
 
 The site is automatically deployed to GitHub Pages from the `docs` folder on the `main` branch using Vite and GitHub Actions. Any changes merged into `main` will trigger a redeploy.
 
-## Branching & Contribution Workflow
-
-- **Do not commit directly to `main`.**
-- Create a new branch for each feature or fix (e.g., `feature/your-feature-name` or `fix/your-bug-description`).
-- Open a Pull Request (PR) to merge your branch into `main`.
-- All PRs should be reviewed before merging.
-- The build and deploy workflow must pass before merging.
-
 ## Branch Protection (Recommended)
 
 To protect the `main` branch:
