@@ -1,29 +1,27 @@
 {
   "name": "ai-maturity-model",
   "version": "2.0.0",
-  "description": "AI Maturity Model app (Lit 3 + Snowpack 3)",
-  "type": "module",
-  "license": "MIT",
-  "author": "Chris Ward",
-  "homepage": "https://firemountainlabs.github.io/ai-maturity-model/",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FireMountainLabs/ai-maturity-model.git"
-  },
+  "description": "A visual overview of useful skills and concepts for AI development",
+  "main": "index.js",
   "scripts": {
-    "dev": "snowpack dev",
+    "start": "snowpack dev",
     "build": "snowpack build",
-    "preview": "npx servor build --browse",
-    "generate-blueprint": "node scripts/generate-blueprint.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "ai",
+    "machine-learning",
+    "deep-learning",
+    "skills",
+    "maturity-model"
+  ],
+  "author": "Chris Ward",
+  "license": "MIT",
   "dependencies": {
-    "lit": "^3.1.2",
-    "@a11y/focus-trap": "^1.0.5",
-    "firebase": "^7.13.2",
-    "web-dialog": "0.0.11"
+    "lit": "^2.0.0",
+    "web-dialog": "^1.0.0"
   },
   "devDependencies": {
-    "snowpack": "^3.8.8",
-    "servor": "^4.0.0"
+    "snowpack": "^3.0.0"
   }
 }

@@ -6,7 +6,6 @@ import "./atoms/compact-switch.js";
 import "./atoms/icon.js";
 import {ALLOW_NATIVE_SHARE, DEFAULT_COMPACT_PX, getShareConfig} from "./config.js";
 import {collections} from "./data.js";
-import {auth, AuthEvents} from "./firebase/auth.js";
 import "./molecules/collection.js";
 import {sharedStyles} from "./styles/shared.js";
 import {
@@ -41,19 +40,9 @@ import {
 } from "./util/util.js";
 
 /**
- * Deferred init Firebase.
- * @returns {Promise<void>}
- */
-async function deferredInitFirebase () {
-    const {initFirebase} = await import("./firebase/init-firebase.js");
-    await initFirebase();
-}
-
-/**
  * The main entry for the application.
  */
 export class App extends LitElement {
-
     static get properties () {
         return {
             compact: {
@@ -251,106 +240,65 @@ export class App extends LitElement {
     }
 
     /**
-     * Hook up first updated.
-     * @param props
+     * Setup the element after it has been updated.
      */
     firstUpdated (props) {
         super.firstUpdated(props);
 
-        // Initialize Firebase if the user is logged in
-        if (auth.isAuthenticated) {
-            deferredInitFirebase().then();
+        // Show help toast on first visit
+        if (getFirstVisit() == null) {
+            this.showHelpToast();
+            setFirstVisitDate();
         }
 
-        // Delay some of the work
-        setTimeout(() => {
-            this.setupServiceWorker().then();
-            this.hashChanged();
-            setTimeout(() => {
-                if (getFirstVisit() == null && currentSnackCount() === 0) {
-                    this.showHelpToast().then();
-                    setFirstVisitDate(new Date());
-                }
-            }, 1000);
-        }, 1000);
-
+        // Setup service worker
+        this.setupServiceWorker();
     }
 
     /**
-     * Sets up listeners.
+     * Setup the listeners.
      */
     setupListeners () {
-
-        // Each time the auth changes we want to re-render
-        auth.addEventListener(AuthEvents.authStateChanged, () => {
-            this.requestUpdate().then();
-        });
-
-        // Measure all exceptions
-        window.addEventListener("error", e => {
-            const {message, filename, lineno, colno, error} = e;
-            const description = `${error.name} - ${message} (${filename}:[${lineno}, ${colno}])`;
-            measureException(description);
-        });
-
-        window.addEventListener("selectstart", e => {
-            if (this.dragging) {
-                e.preventDefault();
-            }
-        });
-
-        // Close all descriptions when escape is pressed
-        window.addEventListener("keydown", e => {
-            switch (e.code) {
-                case "Escape":
-                    dispatchCloseDescriptionEvent();
-                    break;
-                case "Digit7":
-                    if (e.shiftKey && e.altKey) {
-                        this.focusNavigationSelect();
-                    }
-                    break;
-            }
-        });
-
-        // Listen for CTA events
-        window.addEventListener("click", onClickLink);
-
-        // Listen for install event
-        window.addEventListener("appinstalled", e => {
-            measureInstallEvent();
-        });
-
         // Listen for network changes
         window.addEventListener("online", this.networkChanged.bind(this));
         window.addEventListener("offline", this.networkChanged.bind(this));
 
-        // Listen for hash change
+        // Listen for hash changes
         window.addEventListener("hashchange", this.hashChanged.bind(this));
-    }
 
-    /**
-     * Show message when network status changes.
-     * @returns {Promise<void>}
-     */
-    async networkChanged () {
-        const {showSnackbar} = await import("./util/show-snackbar.js");
-        const message = navigator.onLine ? `You are online again` : `You lost connection to the internet`;
-        showSnackbar(message, {
-            timeout: navigator.onLine ? 4000 : null,
-            important: true,
-            buttons: [
-                ["Dismiss", () => ({})]
-            ]
+        // Listen for install events
+        window.addEventListener("beforeinstallprompt", e => {
+            e.preventDefault();
+            measureInstallEvent();
+        });
+
+        // Listen for errors
+        window.addEventListener("error", e => {
+            measureException(e.error);
+        });
+
+        // Listen for unhandled rejections
+        window.addEventListener("unhandledrejection", e => {
+            measureException(e.reason);
         });
     }
 
     /**
-     * Handles that the hash changed.
+     * Called when the network changes.
+     */
+    networkChanged () {
+        if (navigator.onLine) {
+            window.location.reload();
+        }
+    }
+
+    /**
+     * Called when the hash changes.
      */
     hashChanged () {
-        if (location.hash.length > 0) {
-            this.focusCollection(location.hash.slice(1));
+        const hash = window.location.hash;
+        if (hash != null && hash.length > 1) {
+            this.focusCollection(hash.substring(1));
         }
     }
 
@@ -358,73 +306,52 @@ export class App extends LitElement {
      * Setup dragging.
      */
     setupDragging () {
-        let initialPosition = null;
-        let delta = null;
-        let initialScroll = null;
+        let isDragging = false;
+        let startX;
+        let startY;
+        let scrollLeft;
+        let scrollTop;
 
-        // Listen for drag start
-        window.addEventListener("mousedown", e => {
-            if (this.compact || isDialogVisible()) {
-                return;
-            }
+        const collections = this.shadowRoot.querySelector("#collections");
 
-            initialScroll = {
-                x: window.scrollX,
-                y: window.scrollY
-            };
-
-            initialPosition = {
-                x: e.clientX,
-                y: e.clientY
-            };
-
+        collections.addEventListener("mousedown", e => {
+            if (this.compact) return;
+            isDragging = true;
             this.dragging = true;
+            startX = e.pageX - collections.offsetLeft;
+            startY = e.pageY - collections.offsetTop;
+            scrollLeft = collections.scrollLeft;
+            scrollTop = collections.scrollTop;
+        });
 
-        }, {passive: true});
-
-        // Listen for drag end
-        window.addEventListener("mouseup", e => {
-            if (this.compact || isDialogVisible()) {
-                return;
-            }
-
+        collections.addEventListener("mouseleave", () => {
+            isDragging = false;
             this.dragging = false;
-            initialPosition = null;
-            initialScroll = null;
-            delta = null;
-        }, {passive: true});
+        });
 
-        // Listen for the dragging
-        window.addEventListener("mousemove", e => {
-            if (this.dragging
-                && !this.compact
-                && initialPosition != null
-                && !isDialogVisible()) {
-                delta = {
-                    x: initialPosition.x - e.clientX,
-                    y: initialPosition.y - e.clientY
-                };
+        collections.addEventListener("mouseup", () => {
+            isDragging = false;
+            this.dragging = false;
+        });
 
-                const scrollX = initialScroll.x + delta.x;
-                const scrollY = initialScroll.y + delta.y;
-
-                requestAnimationFrame(() => {
-                    window.scrollTo(scrollX, scrollY);
-
-                    // Deselect everything
-                    window.getSelection().removeAllRanges()
-                });
-            }
-        }, {passive: true});
+        collections.addEventListener("mousemove", e => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - collections.offsetLeft;
+            const y = e.pageY - collections.offsetTop;
+            const walkX = (x - startX) * 2;
+            const walkY = (y - startY) * 2;
+            collections.scrollLeft = scrollLeft - walkX;
+            collections.scrollTop = scrollTop - walkY;
+        });
     }
 
     /**
      * Shows a help toast.
-     * @returns {Promise<void>}
      */
     async showHelpToast () {
         const {showSnackbar} = await import("./util/show-snackbar.js");
-        showSnackbar(`The AI Maturity Model is a visual overview of useful skills and concepts for AI development.`, {
+        showSnackbar(`Web Skills is an overview of useful skills to learn as a web developer`, {
             timeout: 1000 * 20,
             wide: true,
             buttons: [
@@ -435,272 +362,186 @@ export class App extends LitElement {
     }
 
     /**
-     * Sets up the service worker.
-     * @returns {Promise<void>}
+     * Setup service worker.
      */
     async setupServiceWorker () {
-        if (!("serviceWorker" in navigator)) return;
-
-        // Register the service worker
-        const reg = await navigator.serviceWorker.register(`sw.js`, {updateViaCache: "none"});
-        if (reg == null) return;
-
-        // Handle cases where the updatefound event was missed
-        if (reg.waiting != null) {
-            this.showUpdateToast();
-        }
-
-        // Reload when we get a new service worker and the user has clicked the "reload" button.
-        const hasController = !!navigator.serviceWorker.controller;
-        let isRefreshing = false;
-        navigator.serviceWorker.addEventListener("controllerchange", async () => {
-            if (!hasController && !isRefreshing) return;
-            isRefreshing = true;
-            location.reload();
-        });
-
-        // Show reload button when there's a new update
-        reg.addEventListener("updatefound", () => {
-            const newWorker = reg.installing;
-            if (newWorker == null) return;
-            newWorker.addEventListener("statechange", async () => {
-                switch (newWorker.state) {
-                    case "installed":
-                        if (hasController) {
+        if ("serviceWorker" in navigator) {
+            try {
+                const registration = await navigator.serviceWorker.register("/sw.js");
+                registration.addEventListener("updatefound", () => {
+                    const newWorker = registration.installing;
+                    newWorker.addEventListener("statechange", () => {
+                        if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
                             this.showUpdateToast();
                         }
-                        break;
-                    default:
-                        break;
-                }
-            });
-        });
-
-        // Check for update
-        reg.update().then();
-
-        // Check for updates every 10 minutes
-        setInterval(() => {
-            reg.update();
-        }, 1000 * 60 * 10);
-    };
+                    });
+                });
+            } catch (err) {
+                measureException(err);
+            }
+        }
+    }
 
     /**
      * Shows an update toast.
-     * @returns {Promise<void>}
      */
     async showUpdateToast () {
         const {showSnackbar} = await import("./util/show-snackbar.js");
-        showSnackbar(`Update available`, {
-            important: true,
+        showSnackbar(`A new version is available`, {
+            timeout: 1000 * 20,
+            wide: true,
             buttons: [
-                ["Reload", async () => {
-                    const reg = await navigator.serviceWorker.getRegistration();
-                    if (reg == null || reg.waiting == null) return;
-                    reg.waiting.postMessage({action: "skipWaiting"});
-                }],
+                ["Update", () => window.location.reload()],
                 ["Dismiss", () => ({})]
             ]
         });
     }
 
     /**
-     * Sets up the compact property.
+     * Setup compact mode.
      */
     setupCompact () {
-
-        // Check whether the compact param should be as default
-        const params = new URLSearchParams(location.search);
-        if (params.get("compact") != null) {
-            setIsCompact(true);
-        }
-
-        // Set initial compact
-        this.compact = window.innerWidth <= DEFAULT_COMPACT_PX || loadIsCompact();
+        this.compact = loadIsCompact();
     }
 
     /**
-     * Signs in the user using Google.
-     */
-    async signIn () {
-        try {
-            await deferredInitFirebase();
-            await auth.signInWithGoogle();
-
-        } catch (err) {
-            const {openDialog} = await import("web-dialog");
-            const {$dialog} = openDialog({
-                center: true,
-                $content: document.createTextNode(err.message)
-            });
-
-            $dialog.style.setProperty("--dialog-color", "black");
-            $dialog.style.setProperty("--dialog-max-width", "450px");
-        }
-    }
-
-    /**
-     * Signs out the user.
-     */
-    async signOut () {
-        await deferredInitFirebase();
-        await auth.signOut();
-    }
-
-    /**
-     * Toggles compact mode.
-     * @param e
+     * Toggle compact mode.
      */
     toggleCompact (e) {
-        const compact = e.detail;
-        this.compact = compact;
-        setIsCompact(compact);
-        measureToggleCompact(compact);
-
-        // Add the compact params to the URL
-        const params = new URLSearchParams(location.search);
-        if (compact) {
-            params.set("compact", "true");
-        } else {
-            params.delete("compact");
-        }
-
-        const search = params.toString().replace(/=(true|false)$/gm, "");
-        history.replaceState(null, "", search.length === 0 ? location.pathname : `${location.pathname}?${search}`);
+        this.compact = !this.compact;
+        setIsCompact(this.compact);
+        measureToggleCompact(this.compact);
     }
 
     /**
-     * Shares the website.
-     * @returns {Promise<void>}
+     * Share the page.
      */
     async share () {
-        measureOpenShare();
-
-        const config = getShareConfig();
-
-        // When navigator.share and navigator.canShare works without issues in the future we don't need this check.
-        if (ALLOW_NATIVE_SHARE && navigator.share) {
+        if (ALLOW_NATIVE_SHARE && navigator.share != null) {
             try {
-                await navigator.share(config);
-                measureShareLink(`Native Share`);
-                return;
-
+                await navigator.share(getShareConfig());
+                measureShareLink();
             } catch (err) {
-
-                // If the user cancelled the share we abort. This was the best cross-browser solution.
-                const errorMessage = (err.message || err.toString()).toLowerCase();
-                if (errorMessage.includes("cancellation") || errorMessage.includes("share canceled") || ("canShare" in navigator && navigator.canShare())) {
-                    return;
-                }
+                measureException(err);
             }
-        }
-
-        // Use the custom share
-        try {
-            // Open fallback share if possible
-            const {openShare} = await import("./util/open-share.js");
-            await openShare(config);
-
-        } catch (err) {
-            // As a last resort we just copy the link
-            await copyToClipboard(config.url);
+        } else {
+            const url = window.location.href;
+            await copyToClipboard(url);
+            measureShareLink();
+            const {showSnackbar} = await import("./util/show-snackbar.js");
+            showSnackbar(`Link copied to clipboard`, {
+                timeout: 1000 * 2
+            });
         }
     }
 
     /**
-     * Opens the help dialog.
-     * @returns {Promise<void>}
+     * Open help.
      */
     async openHelp () {
         measureOpenHelp();
-        const {openHelp} = await import("./util/open-help.js");
-        await openHelp();
+        const {openDialog} = await import("web-dialog");
+        const {$dialog} = openDialog({
+            center: true,
+            $content: document.createTextNode(`Web Skills is a visual overview of useful skills to learn as a web developer. It is useful for people who just started learning about web development and for people who have been in the field for years and want to learn new things. As a beginner, I would encourage you not to see this website as the definitive list of what you need to know but as an example of what you can learn and where you can start. The skills are arranged in chronological order based on what learning path I recommend you to take but feel free to jump around freely.`)
+        });
+
+        $dialog.style.setProperty("--dialog-color", "black");
+        $dialog.style.setProperty("--dialog-max-width", "450px");
     }
 
     /**
-     * Selects a focus jump.
-     * @param name
+     * Focus a collection.
      */
     focusCollection (name) {
-        const $anchor = this.shadowRoot.querySelector(`.focus-anchor[data-collection="${getId({name})}"]`);
-        if ($anchor != null) {
-            $anchor.focus();
-            $anchor.scrollIntoView({block: "start"});
+        const collection = this.shadowRoot.querySelector(`ws-collection[name="${name}"]`);
+        if (collection != null) {
+            collection.scrollIntoView({behavior: "smooth"});
         }
     }
 
     /**
-     * Focuses the navigation select.
+     * Focus the navigation select.
      */
     focusNavigationSelect () {
-        const $navigationSelection = this.shadowRoot.querySelector("#navigation-select");
-        $navigationSelection.focus();
+        const select = this.shadowRoot.querySelector("#navigation-select");
+        if (select != null) {
+            select.focus();
+        }
     }
 
     /**
-     * Renders the element.
+     * Render the element.
      */
     render () {
-        const {signIn, signOut} = this;
-        const user = auth.user;
-
         return html`
             <div id="skip-navigation">
                 <div>
-                    <span>Jump to&nbsp;</span>
-                    <select id="navigation-select" @input="${e => this.focusCollection(e.target.value)}" aria-label="Navigation Assistant" aria-keyshortcuts="Alt + /">
-                        <option disabled>Select a section on the page</option>
-                        ${repeat(collections, ({name}) => html`
-                            <option value="${name}">${name}</option>
-                        `)}
-                    </select>
-                </div>
-                <div>
-                    <span>Press <kbd>alt</kbd> + <kbd>/</kbd> to open this menu</span>
+                    <a href="#collections">Skip to content</a>
                 </div>
             </div>
-            <header id="header">
+            
+            <div id="header">
                 <div>
-                    <a href="https://github.com/FireMountainLabs/ai-maturity-model" target="_blank" rel="noopener" aria-label="Open Github" title="Open Github">
-                        <ws-icon hoverable .template="${githubIconTemplate}"></ws-icon>
-                    </a>
-                    ${user != null ? html`
-                        <div id="avatar">
-                            <img class="img" src="${user.photoURL}" />
-                            <span class="text">${user.displayName || user.email}</span>
-                        </div>
-                    ` : undefined}
+                    <ws-button @click="${this.toggleCompact}" id="toggle-compact">
+                        <ws-icon slot="icon">${this.compact ? "fullscreen" : "fullscreen_exit"}</ws-icon>
+                        ${this.compact ? "Expand" : "Compact"}
+                    </ws-button>
+                    
+                    <ws-button @click="${this.openHelp}">
+                        <ws-icon slot="icon">${helpIconTemplate}</ws-icon>
+                        Help
+                    </ws-button>
+                    
+                    <ws-button @click="${this.share}">
+                        <ws-icon slot="icon">${shareIconTemplate}</ws-icon>
+                        Share
+                    </ws-button>
                 </div>
-                <div>
-                    <div id="toggle-compact" title="${this.compact ? `Disable` : `Enable`} compact layout">
-                        <ws-compact-switch @toggle="${this.toggleCompact}" ?checked="${this.compact}"></ws-compact-switch>
+                
+                <div id="avatar">
+                    <img class="img" src="www/avatar.jpg" alt="Avatar" />
+                    <div>
+                        <div>Chris Ward</div>
+                        <div>@FireMountainLabs</div>
                     </div>
-                    <ws-button aria-label="Open help" @click="${this.openHelp}" title="Open help">
-                        <ws-icon .template="${helpIconTemplate}"></ws-icon>
-                    </ws-button>
-                    <ws-button aria-label="Share website" @click="${this.share}" title="Open share menu">
-                        <ws-icon .template="${shareIconTemplate}"></ws-icon>
-                    </ws-button>
                 </div>
-            </header>
-            <main id="collections">
-                ${repeat(collections, getId, (collection, i) => html`
-                    <span class="focus-anchor" data-collection="${getId(collection)}" tabindex="0"></span>
-                    <ws-collection class="collection" index="${i}" .collection="${collection}" ?compact="${this.compact}"></ws-collection>
+            </div>
+            
+            <div id="collections">
+                ${repeat(collections, collection => html`
+                    <ws-collection
+                        .collection="${collection}"
+                        ?compact="${this.compact}"
+                    ></ws-collection>
                 `)}
-            </main>
-            <footer id="footer">
+            </div>
+            
+            <div id="footer">
                 <div>
-                    ${user != null ? html`
-                        <ws-button @click="${signOut}">🔓 Sign out</ws-button>
-                    ` : html`
-                        <ws-button @click="${signIn}">🔒 Sign in with Google</ws-button>
-                    `}
-                    <a href="https://github.com/FireMountainLabs/ai-maturity-model/stargazers" target="_blank" aria-label="Become a stargazer" rel="noopener">
-                        <ws-button>⭐️ Become a stargazer</ws-button>
+                    <a href="https://github.com/FireMountainLabs/ai-maturity-model" target="_blank" rel="noopener">
+                        <ws-button>
+                            <ws-icon slot="icon">${githubIconTemplate}</ws-icon>
+                            GitHub
+                        </ws-button>
+                    </a>
+                    
+                    <a href="https://www.buymeacoffee.com/AndreasMehlsen" target="_blank" rel="noopener">
+                        <ws-button>
+                            <ws-icon slot="icon">${coffeeIconTemplate}</ws-icon>
+                            Buy me a coffee
+                        </ws-button>
+                    </a>
+                    
+                    <a href="https://twitter.com/AndreasMehlsen" target="_blank" rel="noopener">
+                        <ws-button>
+                            <ws-icon slot="icon">${andreasIconTemplate}</ws-icon>
+                            @AndreasMehlsen
+                        </ws-button>
                     </a>
                 </div>
-            </footer>
+            </div>
+            
             <ws-blur id="blur"></ws-blur>
         `;
     }
