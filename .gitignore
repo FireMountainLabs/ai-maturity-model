@@ -145,3 +145,8 @@ out
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Reinstall dependencies after upgrading Node.js
+npm install
+
+npm run preview
