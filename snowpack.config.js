@@ -11,9 +11,13 @@ module.exports = {
   routes: [
     { match: 'routes', src: '.*', dest: '/index.html' }
   ],
-  alias: {
-    'fs': './empty.js',
-    'path': './empty.js',
-    'crypto': './empty.js'
+  optimize: {
+    bundle: true,
+    minify: true,
+    treeshake: true,
+    target: 'es2020'
+  },
+  packageOptions: {
+    polyfillNode: true
   }
 };
