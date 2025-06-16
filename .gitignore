@@ -6,7 +6,7 @@ docs/
 /dist/
 /dist-ssr/
 *.local
-
+*.pdf
 # Logs
 logs
 *.log
