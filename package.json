@@ -1,19 +1,32 @@
 {
   "name": "ai-maturity-model",
-  "version": "1.0.0",
-  "description": "AI Maturity Model visualization using Cytoscape.js",
-  "type": "module",
+  "version": "2.0.0",
+  "description": "A visual overview of useful skills and concepts for AI development",
+  "main": "index.js",
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "ai",
+    "machine-learning",
+    "deep-learning",
+    "skills",
+    "maturity-model"
+  ],
+  "author": "Chris Ward",
+  "license": "MIT",
   "dependencies": {
+    "lit": "2.7.0",
+    "lit-html": "2.7.0",
+    "lit-element": "3.1.2",
+    "web-dialog": "0.0.11",
     "cytoscape": "^3.28.1",
     "cytoscape-dagre": "^2.5.0",
     "dagre": "^0.8.5"
   },
   "devDependencies": {
-    "vite": "^5.1.4"
+    "snowpack": "^3.8.8"
   }
 }
