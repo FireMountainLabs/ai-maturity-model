@@ -1,12 +1,11 @@
 {
   "name": "ai-maturity-model",
-  "version": "2.0.0",
-  "description": "A visual overview of useful skills and concepts for AI development",
-  "main": "index.js",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "start": "snowpack dev",
-    "build": "snowpack build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [
     "ai",
@@ -18,12 +17,9 @@
   "author": "Chris Ward",
   "license": "MIT",
   "dependencies": {
-    "lit": "2.7.0",
-    "lit-element": "3.1.2",
-    "lit-html": "2.7.0",
-    "web-dialog": "0.0.11"
+    "cytoscape": "^3.28.1"
   },
   "devDependencies": {
-    "snowpack": "^3.8.8"
+    "vite": "^5.1.4"
   }
 }
