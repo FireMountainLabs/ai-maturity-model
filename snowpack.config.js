@@ -5,7 +5,8 @@ module.exports = {
   },
   buildOptions: {
     out: 'build',
-    clean: true
+    clean: true,
+    baseUrl: '/ai-maturity-model/'
   },
   routes: [
     { match: 'routes', src: '.*', dest: '/index.html' }
