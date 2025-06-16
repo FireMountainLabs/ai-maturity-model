@@ -17,6 +17,7 @@ module.exports = {
     treeshake: true,
     target: 'es2020'
   },
+  exclude: ['**/generate-blueprint.js'],
   packageOptions: {
     polyfillNode: true
   }
