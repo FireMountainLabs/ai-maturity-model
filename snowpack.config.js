@@ -9,5 +9,8 @@ module.exports = {
   },
   routes: [
     { match: 'routes', src: '.*', dest: '/index.html' }
-  ]
+  ],
+  alias: {
+    fs: './empty.js'
+  }
 };
