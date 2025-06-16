@@ -1,10 +1,10 @@
 import cytoscape from 'cytoscape';
-import { pillar1Collection } from '../ai-maturity-model/data/pillar_1.js';
-import { pillar2Collection } from '../ai-maturity-model/data/pillar_2.js';
-import { pillar3Collection } from '../ai-maturity-model/data/pillar_3.js';
-import { pillar4Collection } from '../ai-maturity-model/data/pillar_4.js';
-import { pillar5Collection } from '../ai-maturity-model/data/pillar_5.js';
-import { pillar6Collection } from '../ai-maturity-model/data/pillar_6.js';
+import { pillar1Collection } from './data/pillar_1.js';
+import { pillar2Collection } from './data/pillar_2.js';
+import { pillar3Collection } from './data/pillar_3.js';
+import { pillar4Collection } from './data/pillar_4.js';
+import { pillar5Collection } from './data/pillar_5.js';
+import { pillar6Collection } from './data/pillar_6.js';
 
 const pillars = [
   pillar1Collection,
