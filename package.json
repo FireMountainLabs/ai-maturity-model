@@ -13,7 +13,8 @@
   "scripts": {
     "dev": "snowpack dev",
     "build": "snowpack build",
-    "preview": "npx servor build --browse"
+    "preview": "npx servor build --browse",
+    "generate-blueprint": "node scripts/generate-blueprint.js"
   },
   "dependencies": {
     "lit": "^3.1.2",
