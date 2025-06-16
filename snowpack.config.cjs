@@ -21,6 +21,25 @@ module.exports = {
   packageOptions: {
     polyfillNode: true,
     external: ['fs', 'path', 'crypto'],
-    source: 'remote'
+    source: 'remote',
+    rollup: {
+      plugins: [
+        {
+          name: 'node-resolve',
+          resolveId(id) {
+            if (id === 'fs' || id === 'path' || id === 'crypto') {
+              return id;
+            }
+            return null;
+          },
+          load(id) {
+            if (id === 'fs' || id === 'path' || id === 'crypto') {
+              return 'export default {};';
+            }
+            return null;
+          }
+        }
+      ]
+    }
   }
 };
