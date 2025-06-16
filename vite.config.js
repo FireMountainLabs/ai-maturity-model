@@ -2,6 +2,6 @@ export default {
   root: '.',
   publicDir: 'public',
   build: {
-    outDir: 'docs'
+    outDir: 'dist'
   }
 }; 
