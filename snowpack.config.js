@@ -28,7 +28,6 @@ module.exports = {
     packageOptions: {
         polyfillNode: true,
         external: ["fs", "path", "crypto"],
-        source: "remote",
-        knownEntrypoints: ["lit", "lit/directives/repeat.js"]
+        source: "local"
     }
 }; 
