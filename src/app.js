@@ -1,5 +1,6 @@
-import {css, html, LitElement} from "lit";
-import {repeat} from "lit/directives/repeat.js";
+import {css, html} from "lit-html";
+import {LitElement} from "lit-element";
+import {repeat} from "lit-html/directives/repeat.js";
 import "./atoms/blur.js";
 import "./atoms/button.js";
 import "./atoms/compact-switch.js";

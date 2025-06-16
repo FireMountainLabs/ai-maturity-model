@@ -29,6 +29,24 @@ module.exports = {
         polyfillNode: true,
         external: ["fs", "path", "crypto"],
         source: "local",
-        knownEntrypoints: ["lit", "lit/directives/repeat.js"]
+        rollup: {
+            plugins: [
+                {
+                    name: 'node-resolve',
+                    resolveId(id) {
+                        if (id === 'lit' || id === 'lit-html' || id === 'lit-element') {
+                            return id;
+                        }
+                        return null;
+                    },
+                    load(id) {
+                        if (id === 'lit' || id === 'lit-html' || id === 'lit-element') {
+                            return 'export default {};';
+                        }
+                        return null;
+                    }
+                }
+            ]
+        }
     }
 }; 
