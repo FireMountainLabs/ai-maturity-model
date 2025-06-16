@@ -1,54 +1,28 @@
 {
-	"name": "ai-maturity-model",
-	"description": "A visual overview of useful skills to learn as a web developer",
-	"type": "module",
-	"license": "MIT",
-	"author": "Chris Ward",
-	"bugs": {
-		"url": "https://github.com/FireMountainLabs/ai-maturity-modell/issues"
-	},
-	"homepage": "https://firemountainlabs.github.io/ai-maturity-model/",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/FireMountainLabs/ai-maturity-modell.git"
-	},
-	"keywords": [
-		"web",
-		"skills",
-		"learn",
-		"overview",
-		"links",
-		"html",
-		"css",
-		"javascript",
-		"accessibility",
-		"web components",
-		"pwa",
-		"build tools",
-		"frameworks",
-		"testing",
-		"architecture",
-		"design",
-		"ux",
-		"algorithms",
-		"backend"
-	],
-	"scripts": {
-		"serve": "npx servor . index.html 1614 --browse",
-		"s": "npm run serve",
-		"build": "snowpack build --dest docs",
-		"deploy": "npm run build && npx gh-pages -d docs"
-	},
-	"dependencies": {
-		"@a11y/focus-trap": "^1.0.5",
-		"firebase": "^7.13.2",
-		"lit-element": "^2.3.1",
-		"lit-html": "^1.2.1",
-		"web-dialog": "0.0.11"
-	},
-	"devDependencies": {
-		"servor": "^3.2.0",
-		"snowpack": "^1.6.0",
-		"gh-pages": "^6.0.0"
-	}
+  "name": "ai-maturity-model",
+  "version": "2.0.0",
+  "description": "AI Maturity Model app (Lit 3 + Snowpack 3)",
+  "type": "module",
+  "license": "MIT",
+  "author": "Chris Ward",
+  "homepage": "https://firemountainlabs.github.io/ai-maturity-model/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FireMountainLabs/ai-maturity-model.git"
+  },
+  "scripts": {
+    "dev": "snowpack dev",
+    "build": "snowpack build",
+    "preview": "npx servor build --browse"
+  },
+  "dependencies": {
+    "lit": "^3.1.2",
+    "@a11y/focus-trap": "^1.0.5",
+    "firebase": "^7.13.2",
+    "web-dialog": "0.0.11"
+  },
+  "devDependencies": {
+    "snowpack": "^3.8.8",
+    "servor": "^4.0.0"
+  }
 }
