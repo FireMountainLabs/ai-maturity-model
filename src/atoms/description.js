@@ -1,5 +1,4 @@
 import {CLOSE_DESCRIPTION_EVENT, IS_TOUCH} from "../config.js";
-import {auth, AuthEvents} from "../firebase/auth.js";
 import {sharedStyles} from "../styles/shared.js";
 import {googleIconTemplate, youtubeIconTemplate} from "../util/icons.js";
 import {measureCompleteSkill, measureShowDescription} from "../util/measure.js";
@@ -186,18 +185,6 @@ export class Description extends LitElement {
 		return getId(this.collection, this.area, this.skill);
 	}
 
-	get isAuthenticated () {
-		return auth.isAuthenticated;
-	}
-
-	get isCompleted () {
-		return !this.isAuthenticated ? true : auth.hasCompletedSkill(this.skillId);
-	}
-
-	get skillSearchQuery () {
-		return getSkillSearchQuery(this.collection, this.area, this.skill);
-	}
-
 	constructor () {
 		super();
 		this.directionX = "right";
@@ -218,8 +205,6 @@ export class Description extends LitElement {
 
 		this.addEventListener("click", this.onClick);
 		window.addEventListener(CLOSE_DESCRIPTION_EVENT, this.requestClose);
-		auth.addEventListener(AuthEvents.authStateChanged, this.requestUpdate);
-		auth.addEventListener(AuthEvents.completedSkillsChanged, this.requestUpdate);
 
 		if (IS_TOUCH) {
 			window.addEventListener("touchstart", this.checkOutsideClick);
@@ -255,8 +240,6 @@ export class Description extends LitElement {
 		window.removeEventListener("scroll", this.requestClose);
 		window.removeEventListener("touchstart", this.checkOutsideClick);
 		window.removeEventListener(CLOSE_DESCRIPTION_EVENT, this.requestClose);
-		auth.removeEventListener(AuthEvents.authStateChanged, this.requestUpdate);
-		auth.removeEventListener(AuthEvents.completedSkillsChanged, this.requestUpdate);
 	}
 
 	/**
@@ -302,7 +285,6 @@ export class Description extends LitElement {
 	 */
 	async toggleCompleteSkill () {
 		const newIsCompleted = !this.isCompleted;
-		auth.toggleCompleteSkill(this.skillId).then();
 		if (newIsCompleted) {
 			const {currentConfettiCount, sprayConfettiOnce, playAudio} = await import("./../util/confetti-helper.js");
 			if (currentConfettiCount() <= 2) {
@@ -344,7 +326,7 @@ export class Description extends LitElement {
 	 * @returns {f}
 	 */
 	render () {
-		const {skill, isCompleted, isAuthenticated, skillSearchQuery} = this;
+		const {skill, isCompleted} = this;
 		const {description, name} = skill;
 
 		return html`
@@ -355,16 +337,16 @@ export class Description extends LitElement {
 			` : undefined}
 			
 			<div id="smart-search">
-				<a id="search-google" href="https://www.google.com/search?q=${encodeURIComponent(skillSearchQuery)}" target="_blank" aria-label="Search on Google" rel="noopener" @click="${e => onClickLink(e)}">
+				<a id="search-google" href="https://www.google.com/search?q=${encodeURIComponent(this.skillSearchQuery)}" target="_blank" aria-label="Search on Google" rel="noopener" @click="${e => onClickLink(e)}">
 					<ws-icon hoverable .template="${googleIconTemplate}"></ws-icon>
 				</a>
-				<a id="search-youtube" href="https://www.youtube.com/results?search_query=${encodeURIComponent(skillSearchQuery)}" target="_blank" aria-label="Search on Youtube" rel="noopener" @click="${e => onClickLink(e)}">
+				<a id="search-youtube" href="https://www.youtube.com/results?search_query=${encodeURIComponent(this.skillSearchQuery)}" target="_blank" aria-label="Search on Youtube" rel="noopener" @click="${e => onClickLink(e)}">
 					<ws-icon hoverable .template="${youtubeIconTemplate}"></ws-icon>
 				</a>
 			</div>
 			
-			${isAuthenticated ? html`
-				<ws-button bordered id="complete-button" @click="${this.toggleCompleteSkill}">${isCompleted ? `Uncomplete Skill` : `Complete Skill`}</ws-button>
+			${isCompleted ? html`
+				<ws-button bordered id="complete-button" @click="${this.toggleCompleteSkill}">Uncomplete Skill</ws-button>
 			` : undefined}
 		`;
 	}

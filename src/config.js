@@ -11,16 +11,6 @@ export const CLOSE_DESCRIPTION_EVENT = "closeDescription";
 // For now we only use native share on smaller screens due to web share bug.
 export const ALLOW_NATIVE_SHARE = window.innerWidth < DEFAULT_COMPACT_PX;
 
-export const FIREBASE_CONFIG = {
-	apiKey: "AIzaSyAeptLYIAEF7MtzFjKo0XYtC6i0BXbqdjI",
-	authDomain: "ai-maturity-model.firebaseapp.com",
-	databaseURL: "https://ai-maturity-model.firebaseio.com",
-	projectId: "ai-maturity-model",
-	storageBucket: "ai-maturity-model.appspot.com",
-	messagingSenderId: "796050122198",
-	appId: "1:796050122198:web:422fd7fee1037c3a2a3077"
-};
-
 export const LAZY_IMG_INTERSECTION_OPTIONS = {
 	rootMargin: '200px',
 	// [0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09]

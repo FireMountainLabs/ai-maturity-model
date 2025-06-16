@@ -1,7 +1,6 @@
 import "../atoms/button.js";
 import "../atoms/description.js";
 import {IS_TOUCH} from "../config.js";
-import {auth, AuthEvents} from "../firebase/auth.js";
 import {sharedStyles} from "../styles/shared.js";
 import {
 	attachLazyImgIntersectionObserver,
@@ -234,24 +233,6 @@ export class Skill extends LitElement {
 		super.connectedCallback();
 
 		this.completed = this.getCompleted();
-		auth.addEventListener(AuthEvents.authStateChanged, this.authChanged.bind(this));
-		auth.addEventListener(AuthEvents.completedSkillsChanged, this.authChanged.bind(this));
-	}
-
-	/**
-	 * Handles that the auth state changed and updates the completed state.
-	 */
-	authChanged () {
-		if (this.completed !== this.getCompleted()) {
-			this.completed = this.getCompleted();
-			this.requestUpdate().then();
-
-			// Update the description as well
-			const $description = this.shadowRoot.querySelector("#description");
-			if ($description != null) {
-				$description.requestUpdate();
-			}
-		}
 	}
 
 	/**
