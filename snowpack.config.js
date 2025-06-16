@@ -12,6 +12,8 @@ module.exports = {
     { match: 'routes', src: '.*', dest: '/index.html' }
   ],
   alias: {
-    fs: './empty.js'
+    'fs': './empty.js',
+    'path': './empty.js',
+    'crypto': './empty.js'
   }
 };
