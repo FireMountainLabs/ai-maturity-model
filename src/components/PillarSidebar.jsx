@@ -23,7 +23,7 @@ const PillarSidebar = ({ pillars, selectedPillar, onSelectPillar, selectedParent
   return (
     <Box sx={{ width: '100%', background: '#232a36', px: 4, pt: 2, pb: hasParentSkills ? 0 : 2, borderBottom: '2px solid #1e2533' }}>
       <Typography variant="h6" fontWeight={700} color="#fff" sx={{ mb: 1, textAlign: 'center' }}>
-        Maturity Pillars
+        AI Maturity Pillars
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <Tabs

@@ -7,7 +7,7 @@ const Hero = () => {
         <path d="M0 400 Q720 100 1440 400" stroke="#fff" strokeOpacity="0.07" strokeWidth="4" fill="none"/>
         <path d="M0 440 Q720 180 1440 440" stroke="#fff" strokeOpacity="0.04" strokeWidth="4" fill="none"/>
       </svg>
-      <img src="/ai-maturity-model/fml.png" alt="Fire Mountain Labs Logo" class="hero-logo" />
+      <img src={`${import.meta.env.BASE_URL}fml.png`} alt="Fire Mountain Labs Logo" className="hero-logo" />
       <h1 className="hero-title">AI Maturity Model</h1>
       <p className="hero-subtitle">
         Discover your organization's strengths and opportunities in AI adoption, governance, and risk. 

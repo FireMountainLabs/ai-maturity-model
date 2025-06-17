@@ -58,15 +58,13 @@ body {
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  gap: 16px;
   justify-content: center;
   align-items: center;
-  width: 320px;      /* 2 x 140px + gap */
+  width: auto;
   margin: 0 auto;
-  background: none;
-}
-
-.icon-grid .floating-icon {
+  max-width: 120px;
+}grid .floating-icon {
   margin: 0;
   display: flex;
   align-items: center;
@@ -84,4 +82,16 @@ body {
   box-shadow: none;
   filter: none;
   object-fit: contain;
+}
+
+.hero-logo {
+  display: block;
+  max-width: 70px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 24px 0 #00345244;
+  background: transparent;
 } 
