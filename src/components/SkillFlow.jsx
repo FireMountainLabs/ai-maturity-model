@@ -25,6 +25,14 @@ const timelineArray = [
   { type: 'level', level: 5 }
 ];
 
+// Helper to fix image URLs for GitHub Pages
+function withBaseUrl(url) {
+  if (typeof url === 'string' && url.startsWith('/')) {
+    return `${import.meta.env.BASE_URL}${url.replace(/^\//, '')}`;
+  }
+  return url;
+}
+
 const SkillFlow = () => (
   <Box sx={{ width: '100%', maxWidth: 1200, mx: 'auto', mt: 6, mb: 6, position: 'relative' }}>
     <Typography variant="h6" color="#fff" sx={{ mb: 4, textAlign: 'center' }}>
@@ -115,11 +123,11 @@ const SkillFlow = () => (
                       gap: '24px',
                     }}>
                       {imageLinks.slice(0, 4).map((link, i) => (
-                        <img key={i} src={link.url} alt={`icon-${i}`} style={{ width: 140, height: 140, borderRadius: '16px', objectFit: 'contain', background: 'none', boxShadow: 'none', filter: 'none' }} />
+                        <img key={i} src={withBaseUrl(link.url)} alt={`icon-${i}`} style={{ width: 140, height: 140, borderRadius: '16px', objectFit: 'contain', background: 'none', boxShadow: 'none', filter: 'none' }} />
                       ))}
                     </Box>
                   ) : (
-                    <img src={imageLinks[0].url} alt="icon" style={{ width: 120, height: 120, borderRadius: '12px', objectFit: 'contain', filter: 'drop-shadow(0 0 16px #ffd60088)' }} />
+                    <img src={withBaseUrl(imageLinks[0].url)} alt="icon" style={{ width: 120, height: 120, borderRadius: '12px', objectFit: 'contain', filter: 'drop-shadow(0 0 16px #ffd60088)' }} />
                   )}
                 </Box>
                 {/* Connector and Dot - T-junction style */}
@@ -209,7 +217,7 @@ const SkillFlow = () => (
                     py: 2,
                   }}>
                     {imageLinks.slice(0, 4).map((link, i) => (
-                      <img key={i} src={link.url} alt={`icon-${i}`} style={{ width: 140, height: 140, borderRadius: '16px', objectFit: 'contain', background: 'none', boxShadow: 'none', filter: 'none' }} />
+                      <img key={i} src={withBaseUrl(link.url)} alt={`icon-${i}`} style={{ width: 140, height: 140, borderRadius: '16px', objectFit: 'contain', background: 'none', boxShadow: 'none', filter: 'none' }} />
                     ))}
                   </Box>
                 </Box>
@@ -296,7 +304,7 @@ const SkillFlow = () => (
                     alignItems: 'center',
                     justifyContent: 'center',
                   }}>
-                    <img src={imageLinks[0].url} alt="icon" style={{ width: 120, height: 120, borderRadius: '12px', objectFit: 'contain', filter: 'drop-shadow(0 0 16px #ffd60088)' }} />
+                    <img src={withBaseUrl(imageLinks[0].url)} alt="icon" style={{ width: 120, height: 120, borderRadius: '12px', objectFit: 'contain', filter: 'drop-shadow(0 0 16px #ffd60088)' }} />
                   </Box>
                 </Box>
                 {/* Connector and Dot - T-junction style */}
@@ -389,7 +397,7 @@ const SkillFlow = () => (
                   }}>
                     <CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 180 }}>
                       {imageUrl && (
-                        <img src={imageUrl} alt={item.title || 'placeholder'} style={{ width: 64, height: 64, objectFit: 'contain', marginBottom: 16 }} />
+                        <img src={withBaseUrl(imageUrl)} alt={item.title || 'placeholder'} style={{ width: 64, height: 64, objectFit: 'contain', marginBottom: 16 }} />
                       )}
                       <Typography variant="h5" fontWeight={700} align="center">
                         {item.title || 'Title'}
