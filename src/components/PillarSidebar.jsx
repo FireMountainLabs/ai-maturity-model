@@ -1,10 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 const PillarSidebar = ({ pillars, selectedPillar, onSelectPillar, selectedParentSkill, onSelectParentSkill }) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth > 768) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const hasParentSkills =
     selectedPillar !== null &&
     pillars[selectedPillar] &&
@@ -20,15 +38,18 @@ const PillarSidebar = ({ pillars, selectedPillar, onSelectPillar, selectedParent
     '#E68A8A', // Performance & Application
   ];
 
-  return (
-    <Box sx={{ width: '100%', background: '#232a36', px: 4, pt: 2, pb: hasParentSkills ? 0 : 2, borderBottom: '2px solid #1e2533' }}>
+  const sidebarContent = (
+    <>
       <Typography variant="h6" fontWeight={700} color="#fff" sx={{ mb: 1, textAlign: 'center' }}>
         AI Maturity Pillars
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <Tabs
           value={selectedPillar}
-          onChange={(_, idx) => onSelectPillar(idx)}
+          onChange={(_, idx) => {
+            onSelectPillar(idx);
+            if (isMobile) setIsOpen(false);
+          }}
           variant="scrollable"
           scrollButtons="auto"
           textColor="inherit"
@@ -66,7 +87,10 @@ const PillarSidebar = ({ pillars, selectedPillar, onSelectPillar, selectedParent
           </Typography>
           <Tabs
             value={selectedParentSkill}
-            onChange={(_, idx) => onSelectParentSkill(idx)}
+            onChange={(_, idx) => {
+              onSelectParentSkill(idx);
+              if (isMobile) setIsOpen(false);
+            }}
             variant="scrollable"
             scrollButtons="auto"
             textColor="inherit"
@@ -90,6 +114,55 @@ const PillarSidebar = ({ pillars, selectedPillar, onSelectPillar, selectedParent
           </Tabs>
         </Box>
       )}
+    </>
+  );
+
+  if (isMobile) {
+    return (
+      <>
+        <IconButton
+          onClick={() => setIsOpen(!isOpen)}
+          sx={{
+            position: 'fixed',
+            bottom: 16,
+            right: 16,
+            zIndex: 1001,
+            bgcolor: 'rgba(35, 42, 54, 0.9)',
+            backdropFilter: 'blur(10px)',
+            '&:hover': {
+              bgcolor: 'rgba(35, 42, 54, 1)',
+            },
+          }}
+        >
+          {isOpen ? <CloseIcon sx={{ color: '#fff' }} /> : <MenuIcon sx={{ color: '#fff' }} />}
+        </IconButton>
+        <Box
+          sx={{
+            position: 'fixed',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            background: '#232a36',
+            px: 2,
+            pt: 2,
+            pb: hasParentSkills ? 0 : 2,
+            borderTop: '2px solid #1e2533',
+            transform: isOpen ? 'translateY(0)' : 'translateY(100%)',
+            transition: 'transform 0.3s ease-in-out',
+            zIndex: 1000,
+            maxHeight: '80vh',
+            overflowY: 'auto',
+          }}
+        >
+          {sidebarContent}
+        </Box>
+      </>
+    );
+  }
+
+  return (
+    <Box sx={{ width: '100%', background: '#232a36', px: 4, pt: 2, pb: hasParentSkills ? 0 : 2, borderBottom: '2px solid #1e2533' }}>
+      {sidebarContent}
     </Box>
   );
 };
