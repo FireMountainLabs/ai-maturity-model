@@ -1,0 +1,17 @@
+[
+  {
+    "id": "ICON1",
+    "title": "",
+    "stage": "",
+    "level": 1,
+    "color_code": "#FFD600",
+    "description": "",
+    "invisibility": true,
+    "links": [
+      { "text": "Custom PNG", "url": "/ai-maturity-model/icons/badges/AIC_AIExecBadge_Jan-24.png" },
+      { "text": "Custom PNG", "url": "/ai-maturity-model/icons/badges/AIC_AI-Foundation.png" },
+      { "text": "Custom PNG", "url": "/ai-maturity-model/icons/badges/AIC_AIEveryoneBadge_Mar-24.png" },
+      { "text": "Custom PNG", "url": "/ai-maturity-model/icons/badges/AIC_AISalesBadge_Jan-24.png" }
+    ]
+  }
+]

@@ -1,0 +1,75 @@
+[
+    {
+      "id": "A1",
+      "title": "Conduct AI Readiness Assessment",
+      "stage": "Foundational",
+      "level": 1,
+      "timeline_position": "Week 1",
+      "color_code": "#1f77b4",
+      "image_keywords": ["magnifying glass", "checklist", "analysis"],
+      "description": "Perform an organization-wide AI readiness assessment to surface current capabilities, gaps, and quick-win opportunities.",
+      "links": [
+        {
+          "text": "Readiness Assessment Template",
+          "url": "https://example.com/ai-readiness-template"
+        },
+        {
+          "text": "NIST AI RMF Guidance",
+          "url": "https://www.nist.gov/ai-risk-management"
+        },
+        {
+          "text": "Custom PNG",
+          "url": "/ai-maturity-model/icons/assessment.png"
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "title": "Define AI Governance Framework",
+      "stage": "Developing",
+      "level": 2,
+      "timeline_position": "Week 4",
+      "color_code": "#ff7f0e",
+      "image_keywords": ["flowchart", "policy", "framework"],
+      "description": "Establish policies, roles, and decision-rights for your AI program, aligned to industry standards and regulator expectations.",
+      "links": [
+        {
+          "text": "Governance Playbook",
+          "url": "https://example.com/governance-playbook"
+        },
+        {
+          "text": "EU AI Act Overview",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0693"
+        },
+        {
+          "text": "Custom PNG",
+          "url": "/ai-maturity-model/icons/governance.png"
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "title": "Implement Data Quality Controls",
+      "stage": "Advanced",
+      "level": 3,
+      "timeline_position": "Week 8",
+      "color_code": "#2ca02c",
+      "image_keywords": ["database", "quality control", "metrics"],
+      "description": "Deploy data governance and quality-assurance controls to ensure reliable training and validation of AI models.",
+      "links": [
+        {
+          "text": "Data Governance Framework",
+          "url": "https://example.com/data-governance"
+        },
+        {
+          "text": "MITRE ATLAS Techniques",
+          "url": "https://atlas.mitre.org"
+        },
+        {
+          "text": "Custom PNG",
+          "url": "/ai-maturity-model/icons/data-quality.png"
+        }
+      ]
+    }
+  ]
+  
