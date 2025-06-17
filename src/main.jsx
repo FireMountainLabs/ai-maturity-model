@@ -1,3 +1,5 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 import { pillar1Collection } from './data/pillar_1.js';
 import { pillar2Collection } from './data/pillar_2.js';
 import { pillar3Collection } from './data/pillar_3.js';
@@ -5,8 +7,8 @@ import { pillar4Collection } from './data/pillar_4.js';
 import { pillar5Collection } from './data/pillar_5.js';
 import { pillar6Collection } from './data/pillar_6.js';
 // import cytoscape from 'cytoscape';
-import { createRoot } from 'react-dom/client';
-import D3Tree from './D3Tree.jsx';
+import App from './components/App';
+import './style.css';
 
 const pillars = [
   pillar1Collection,
@@ -137,34 +139,14 @@ const pillarAccentColors = [
   '#74121D'  // red
 ];
 
-// After DOM is ready, render Cytoscape mini-trees for each area
-window.addEventListener('DOMContentLoaded', () => {
-  const panelRow = document.getElementById('pillars-panel-row');
-  panelRow.innerHTML = pillars
-    .map((pillar, idx) => {
-      return `
-        <div class="pillar-row" style="display: flex; flex-direction: row; align-items: flex-start; gap: 2.5rem; width: 100%; margin-bottom: 2rem;">
-          <div class="pillar-description-card">
-            <div class="pillar-description-title" style="font-size: 1.15rem; font-weight: 800; color: #fff; margin-bottom: 0.7rem;">${pillar.name}</div>
-            <div class="pillar-description-text" style="font-size: 1rem; color: #e0e0e0;">${pillarDescriptions[idx]}</div>
-          </div>
-          <div id="d3-tree-${idx}" class="d3-tree-canvas" style="width: 320px; height: 220px;"></div>
-        </div>
-      `;
-    })
-    .join('');
-
-  // Mount React D3Tree for each pillar's first area
-  pillars.forEach((pillar, idx) => {
-    const area = pillar.areas[0];
-    if (!area) return;
-    const treeData = {
-      name: area.name,
-      children: (area.skills || []).map(skill => ({ name: skill.name }))
-    };
-    const mountNode = document.getElementById(`d3-tree-${idx}`);
-    if (mountNode) {
-      createRoot(mountNode).render(<D3Tree data={treeData} />);
-    }
-  });
-}); 
+// Render the React app
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App
+      pillars={pillars}
+      pillarDescriptions={pillarDescriptions}
+      glowClasses={glowClasses}
+    />
+  </React.StrictMode>
+);

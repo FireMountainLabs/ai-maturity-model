@@ -1,0 +1,62 @@
+[
+  {
+    "id": "B1",
+    "title": "Develop AI Ethics Policy",
+    "stage": "Foundational",
+    "level": 1,
+    "timeline_position": "Week 2",
+    "color_code": "#e377c2",
+    "image_keywords": ["ethics", "policy", "document"],
+    "description": "Draft and approve an AI ethics policy to guide responsible development and deployment across the organization.",
+    "links": [
+      {
+        "text": "Ethics Policy Template",
+        "url": "https://example.com/ai-ethics-template"
+      },
+      {
+        "text": "Custom PNG",
+        "url": "/ai-maturity-model/icons/ethics.png"
+      }
+    ]
+  },
+  {
+    "id": "B2",
+    "title": "Integrate AI with Business Processes",
+    "stage": "Developing",
+    "level": 2,
+    "timeline_position": "Week 6",
+    "color_code": "#8c564b",
+    "image_keywords": ["integration", "workflow", "business"],
+    "description": "Align AI initiatives with core business processes to maximize impact and streamline operations.",
+    "links": [
+      {
+        "text": "Integration Guide",
+        "url": "https://example.com/integration-guide"
+      },
+      {
+        "text": "Custom PNG",
+        "url": "/ai-maturity-model/icons/integration.png"
+      }
+    ]
+  },
+  {
+    "id": "B3",
+    "title": "Scale AI Infrastructure",
+    "stage": "Advanced",
+    "level": 3,
+    "timeline_position": "Week 16",
+    "color_code": "#bcbd22",
+    "image_keywords": ["cloud", "infrastructure", "scaling"],
+    "description": "Expand and optimize AI infrastructure to support increased data, users, and model complexity.",
+    "links": [
+      {
+        "text": "Infrastructure Scaling Guide",
+        "url": "https://example.com/scaling-guide"
+      },
+      {
+        "text": "Custom PNG",
+        "url": "/ai-maturity-model/icons/infrastructure.png"
+      }
+    ]
+  }
+] 
