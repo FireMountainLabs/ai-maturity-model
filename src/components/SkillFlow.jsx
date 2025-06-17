@@ -27,8 +27,11 @@ const timelineArray = [
 
 // Helper to fix image URLs for GitHub Pages
 function withBaseUrl(url) {
-  if (typeof url === 'string' && url.startsWith('/')) {
-    return `${import.meta.env.BASE_URL}${url.replace(/^\//, '')}`;
+  if (typeof url === 'string') {
+    if (url.startsWith(import.meta.env.BASE_URL)) return url;
+    if (url.startsWith('/')) {
+      return `${import.meta.env.BASE_URL}${url.replace(/^\//, '')}`;
+    }
   }
   return url;
 }

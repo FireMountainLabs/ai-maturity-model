@@ -15,7 +15,7 @@
       },
       {
         "text": "Custom PNG",
-        "url": "/ai-maturity-model/icons/ethics.png"
+        "url": "/icons/ethics.png"
       }
     ]
   },
@@ -35,7 +35,7 @@
       },
       {
         "text": "Custom PNG",
-        "url": "/ai-maturity-model/icons/integration.png"
+        "url": "/icons/integration.png"
       }
     ]
   },
@@ -55,7 +55,7 @@
       },
       {
         "text": "Custom PNG",
-        "url": "/ai-maturity-model/icons/infrastructure.png"
+        "url": "/icons/infrastructure.png"
       }
     ]
   }

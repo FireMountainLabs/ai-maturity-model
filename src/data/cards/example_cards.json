@@ -19,7 +19,7 @@
         },
         {
           "text": "Custom PNG",
-          "url": "/ai-maturity-model/icons/assessment.png"
+          "url": "/icons/assessment.png"
         }
       ]
     },
@@ -43,7 +43,7 @@
         },
         {
           "text": "Custom PNG",
-          "url": "/ai-maturity-model/icons/governance.png"
+          "url": "/icons/governance.png"
         }
       ]
     },
@@ -67,7 +67,7 @@
         },
         {
           "text": "Custom PNG",
-          "url": "/ai-maturity-model/icons/data-quality.png"
+          "url": "/icons/data-quality.png"
         }
       ]
     }
