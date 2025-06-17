@@ -149,4 +149,4 @@ root.render(
       glowClasses={glowClasses}
     />
   </React.StrictMode>
-); 
+);
